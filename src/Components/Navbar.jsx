@@ -3,16 +3,14 @@ import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-
 export function Navbar() {
   const [active, setActive] = useState("");
 
-  const [usd, setUsd] = useState(false)
+  const [usd, setUsd] = useState(false);
 
   const handleUsdToggle = () => {
-  setUsd(!usd)
-  }
-
+    setUsd(!usd);
+  };
 
   return (
     <div className="NavBar">
@@ -73,10 +71,10 @@ export function Navbar() {
         </div>
       </div>
       <div className="NavBar-rightGrid">
-        <div> { /*for search bar */}</div>
+        <div> {/*for search bar */}</div>
         <StartFundBtn />
-        <Link to= '/signUp'>
-          <i class="far fa-user-circle"></i>
+        <Link to="/Register">
+          <i className="far fa-user-circle"></i>
         </Link>
       </div>
     </div>

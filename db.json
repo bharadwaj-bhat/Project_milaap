@@ -1,0 +1,58 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "full_name": "manu",
+      "email": "manu@gmail.com",
+      "pass": "9868551551"
+    },
+    {
+      "full_name": "Pulkit Tyagi",
+      "email": "pulkit@gmail.com",
+      "pass": "123456",
+      "id": 2
+    },
+    {
+      "full_name": "Priyanshu Tyagi",
+      "email": "priyanshu@gmail.com",
+      "pass": "123456789",
+      "id": 3
+    },
+    {
+      "full_name": "Jayesh Pandey",
+      "email": "jayesh@gmail.com",
+      "pass": "789456",
+      "id": 4
+    },
+    {
+      "full_name": "shubham singh",
+      "email": "shubhsm@gmail.com",
+      "pass": "123456",
+      "id": 5
+    },
+    {
+      "full_name": "shivnsh tyagi",
+      "email": "shivansh@gmail.com",
+      "pass": "789456",
+      "id": 6
+    },
+    {
+      "full_name": "nitin chauhan",
+      "email": "nitin@gmail.com",
+      "pass": "9868551551",
+      "id": 7
+    },
+    {
+      "full_name": "Rishabh Garg",
+      "email": "garg@gmail.com",
+      "pass": "123456",
+      "id": 8
+    },
+    {
+      "full_name": "",
+      "email": "",
+      "pass": "",
+      "id": 9
+    }
+  ]
+}
