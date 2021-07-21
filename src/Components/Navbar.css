@@ -1,15 +1,20 @@
+:root{
+   --primary:rgb(156,51,83);
+}
+
 
 .NavBar{
     width:100%;
     height: 70px;
     display: grid;
-    grid-template-columns: 12fr 7fr;
-    outline:1px black solid;
+    grid-template-columns: 10fr 7fr;
+    grid-gap:80px;
+    box-shadow: 0 8px 12px -6px rgba(156, 51, 83, 0.281);
 }
 .NavBar-leftGrid{
     display: grid;
     height: 70px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.2fr 2fr;
     grid-gap:10px;
     align-items:center;
     
@@ -26,15 +31,37 @@
     margin-left: 15px;
 }
 
+.NavBar-rightGrid{
+    display: grid;
+    grid-gap:190px;
+}
+
 .nav_options{
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
     text-decoration: none;
-    color:black
+    color:black;
+    text-align: center;
+    padding:20px 0px;
 }
 
 .nav_options:hover{
     opacity: 0.8;
+    background:rgba(218, 218, 218, 0.568);
+    border-bottom: 1px solid var(--primary);
 }
+
+.nav_options_active{
+    background: var(--primary);
+    font-weight: 600;
+    color:rgb(253,190,208);
+    transition: 0.1s ease-in;
+     font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    padding:20px 5px;
+}
+
 
 .NavBar-rightGrid{
     display: grid;
@@ -45,13 +72,68 @@
 .NavBar-rightGrid button{
     border:none;
     width:230px;
-    height: 46px;
-    font-size: 1.3rem;
+    height: 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     color:#ffff;
     background-color:rgb(156,51,83);
     border-radius: 30px;
 }
+
+.NavBar-rightGrid button:hover{
+    background: rgb(125,41,67);
+      box-shadow: 0 6px 6px -6px black;
+    cursor: pointer;
+}
+
 .NavBar-rightGrid i{
     font-size: 40px;
-    color:rgb(156,51,83);
+    color:rgb(138, 66, 87);
+    font-weight: 100;
+}
+.NavBar-rightGrid i:hover{
+      color: rgb(102, 32, 54);
+      cursor: pointer;
+}
+
+.toggle_switch{
+    margin-left: 20px;
+    width:75px;
+    height: 30px;
+    border-radius: 20px;
+    background: var(--primary);
+    display: flex;
+}
+.toggle_switch:hover{
+    cursor: pointer;
+}
+
+.toggle_dial{
+    width:30px;
+    height: 30px;
+    box-shadow: 0 0 7px grey;
+    border-radius: 50%;
+    background: white;
+    position:relative;
+    left:0;  
+    transition: linear 0.1s ;
+}
+
+.toggleText{
+    position: relative;
+    font-size: 0.9rem;
+    text-align: center;
+    left:5px;
+    top:6px;
+    color:white;
+}
+
+.toggled .toggle_dial{
+    left:45px;
+}
+
+.toggled .toggleText {
+    top:6px;
+    left:-20px;
 }
