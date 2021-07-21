@@ -6,7 +6,9 @@ import { Donations } from './Components/Pages/Donations'
 import { Lend } from './Components/Pages/Lend'
 import {Pricing} from './Components/Pages/Pricing'
 import {ContactUs} from './Components/Pages/ContactUs'
-import {SignUpLogin} from './Components/Pages/SignUP_Login'
+import { SignUpLogin } from './Components/Pages/SignUP_Login'
+import {Footer} from './Components/Footer/Footer'
+
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
             <Route path='/signUp' exact component={ SignUpLogin }/>
         </Switch>
         </div>
-        </Router>
+      </Router>
+      <Footer/>
     </div>
   );
 }

@@ -1,139 +1,136 @@
-:root{
-   --primary:rgb(156,51,83);
+:root {
+  --primary: rgb(156, 51, 83);
 }
 
-
-.NavBar{
-    width:100%;
-    height: 70px;
-    display: grid;
-    grid-template-columns: 10fr 7fr;
-    grid-gap:80px;
-    box-shadow: 0 8px 12px -6px rgba(156, 51, 83, 0.281);
+.NavBar {
+  width: 100%;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 10fr 7fr;
+  grid-gap: 2px;
+  box-shadow: 0 8px 12px -6px rgba(156, 51, 83, 0.281);
 }
-.NavBar-leftGrid{
-    display: grid;
-    height: 70px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.2fr 2fr;
-    grid-gap:10px;
-    align-items:center;
-    
+.NavBar-leftGrid {
+  display: grid;
+  height: 70px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.2fr 2fr;
+  grid-gap: 10px;
+  align-items: center;
 }
 
-.NavBar-leftGrid img{
-    width:100px;
-    margin:0 25px 0 15px;
+.NavBar-leftGrid img {
+  width: 100px;
+  margin: 0 25px 0 15px;
 }
 
-.NavBar-leftGrid i{
-    font-size: 2.4rem;
-    color:rgb(156,51,83);
-    margin-left: 15px;
+.NavBar-leftGrid i {
+  font-size: 2.4rem;
+  color: rgb(156, 51, 83);
+  margin-left: 15px;
 }
 
-.NavBar-rightGrid{
-    display: grid;
-    grid-gap:190px;
+.NavBar-rightGrid {
+  display: grid;
+  grid-gap: 190px;
 }
 
-.nav_options{
-    font-size: 1.05rem;
-    font-weight: 600;
-    text-decoration: none;
-    color:black;
-    text-align: center;
-    padding:20px 0px;
+.nav_options {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  padding: 20px 0px;
 }
 
-.nav_options:hover{
-    opacity: 0.8;
-    background:rgba(218, 218, 218, 0.568);
-    border-bottom: 1px solid var(--primary);
+.nav_options:hover {
+  opacity: 0.8;
+  background: rgba(218, 218, 218, 0.568);
+  border-bottom: 1px solid var(--primary);
 }
 
-.nav_options_active{
-    background: var(--primary);
-    font-weight: 600;
-    color:rgb(253,190,208);
-    transition: 0.1s ease-in;
-     font-size: 1rem;
-    text-decoration: none;
-    text-align: center;
-    padding:20px 5px;
+.nav_options_active {
+  background: var(--primary);
+  font-weight: 600;
+  color: rgb(253, 190, 208);
+  transition: 0.1s ease-in;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 5px;
 }
 
-
-.NavBar-rightGrid{
-    display: grid;
-    grid-template-columns: 2fr 1fr ;
-    align-items: center;
+.NavBar-rightGrid {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  grid-gap:20px;
+  align-items: center;
 }
 
-.NavBar-rightGrid button{
-    border:none;
-    width:230px;
-    height: 45px;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color:#ffff;
-    background-color:rgb(156,51,83);
-    border-radius: 30px;
+.StartFundBtn {
+  border: none;
+  width: 230px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffff;
+  background-color: rgb(156, 51, 83);
+  border-radius: 30px;
+}
+.StartFundBtn:hover {
+  background: rgb(150, 48, 80);
+  box-shadow: 0 6px 6px -6px black;
+  cursor: pointer;
 }
 
-.NavBar-rightGrid button:hover{
-    background: rgb(125,41,67);
-      box-shadow: 0 6px 6px -6px black;
-    cursor: pointer;
+.NavBar-rightGrid i {
+  font-size: 40px;
+  color: rgb(138, 66, 87);
+  font-weight: 100;
+}
+.NavBar-rightGrid i:hover {
+  color: rgb(102, 32, 54);
+  cursor: pointer;
 }
 
-.NavBar-rightGrid i{
-    font-size: 40px;
-    color:rgb(138, 66, 87);
-    font-weight: 100;
+.toggle_switch {
+  margin-left: 20px;
+  width: 75px;
+  height: 30px;
+  border-radius: 20px;
+  background: var(--primary);
+  display: flex;
 }
-.NavBar-rightGrid i:hover{
-      color: rgb(102, 32, 54);
-      cursor: pointer;
-}
-
-.toggle_switch{
-    margin-left: 20px;
-    width:75px;
-    height: 30px;
-    border-radius: 20px;
-    background: var(--primary);
-    display: flex;
-}
-.toggle_switch:hover{
-    cursor: pointer;
+.toggle_switch:hover {
+  cursor: pointer;
 }
 
-.toggle_dial{
-    width:30px;
-    height: 30px;
-    box-shadow: 0 0 7px grey;
-    border-radius: 50%;
-    background: white;
-    position:relative;
-    left:0;  
-    transition: linear 0.1s ;
+.toggle_dial {
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 7px grey;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  left: 0;
+  transition: linear 0.1s;
 }
 
-.toggleText{
-    position: relative;
-    font-size: 0.9rem;
-    text-align: center;
-    left:5px;
-    top:6px;
-    color:white;
+.toggleText {
+  position: relative;
+  font-size: 0.9rem;
+  text-align: center;
+  left: 5px;
+  top: 6px;
+  color: white;
 }
 
-.toggled .toggle_dial{
-    left:45px;
+.toggled .toggle_dial {
+  left: 45px;
 }
 
 .toggled .toggleText {
-    top:6px;
-    left:-20px;
+  top: 6px;
+  left: -20px;
 }

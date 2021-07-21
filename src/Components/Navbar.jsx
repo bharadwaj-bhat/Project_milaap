@@ -1,4 +1,5 @@
 import "../Components/Navbar.css";
+import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -12,10 +13,6 @@ export function Navbar() {
   setUsd(!usd)
   }
 
-  const toggled = true;
-  const handleOnClick = () => {
-   
-  }
 
   return (
     <div className="NavBar">
@@ -76,7 +73,8 @@ export function Navbar() {
         </div>
       </div>
       <div className="NavBar-rightGrid">
-        <button> Start a fundraiser </button>
+        <div> { /*for search bar */}</div>
+        <StartFundBtn />
         <Link to= '/signUp'>
           <i class="far fa-user-circle"></i>
         </Link>
