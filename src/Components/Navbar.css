@@ -9,6 +9,9 @@
   grid-template-columns: 10fr 7fr;
   grid-gap: 2px;
   box-shadow: 0 8px 12px -6px rgba(156, 51, 83, 0.281);
+  position:fixed;
+  background-color: white;
+  z-index: 2;
 }
 .NavBar-leftGrid {
   display: grid;
