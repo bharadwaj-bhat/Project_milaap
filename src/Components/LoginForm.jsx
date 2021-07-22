@@ -14,11 +14,11 @@ function LoginForm() {
   const handleLogin = async () => {
     let { data } = await axios.get("http://localhost:3001/user");
     for (let i = 0; i < data.length; i++) {
+      debugger;
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
         history.push("/");
-        return true;
       }
     }
   };
