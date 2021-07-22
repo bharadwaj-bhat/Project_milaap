@@ -94,7 +94,17 @@ const Raised = styled.div`
 
 console.log(data);
 
-const FundTab = ({ image, title, amount, author }) => {
+const FundTab = ({ image, title, amount, author, usd }) => {
+  
+  const usdValue = (Number(amount) / 74.32).toFixed(2)
+  function commaReplacer(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  let inrVal = commaReplacer(amount)
+ 
+  let usdVal = commaReplacer(usdValue)
+
   return (
     <>
       <WRAPPER>
@@ -105,7 +115,7 @@ const FundTab = ({ image, title, amount, author }) => {
             <img src={loading} alt="" />
             <div>
               <div>Raised</div>
-              <div>₹{amount}</div>
+              <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
             </div>
             <div>
               <div>Created By</div>
@@ -118,7 +128,7 @@ const FundTab = ({ image, title, amount, author }) => {
   );
 };
 
-const FundDisplay = () => {
+const FundDisplay = ({usd}) => {
   const [covid, setCovid] = useState(true);
   const [medical, setMedical] = useState(false);
   const [memories, setMemories] = useState(false);
@@ -192,6 +202,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd = {usd}
                 />
               );
             })
@@ -203,6 +214,8 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd = {usd}
+
                 />
               );
             })
@@ -214,6 +227,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd={usd}
                 />
               );
             })
@@ -224,6 +238,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd={usd}
                 />
               );
             })}

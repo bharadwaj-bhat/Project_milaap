@@ -3,12 +3,12 @@ import { Search } from "../Search";
 import { FundDisplay } from "../FundTab";
 import { Bottom } from "../Bottom";
 
-export function Home() {
+export function Home({usd}) {
   return (
     <div>
       <Intro />
       <Search />
-      <FundDisplay />
+      <FundDisplay usd = {usd} />
       <Bottom />
     </div>
   );

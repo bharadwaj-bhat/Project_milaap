@@ -1,4 +1,5 @@
 import "./App.css";
+import {useState} from 'react'
 import { Navbar } from "./Components/Navbar";
 import {
   BrowserRouter as Router,
@@ -15,12 +16,12 @@ import { Footer } from "./Components/Footer/Footer";
 import Rform from "./Components/Pages/Register";
 import Lform from "./Components/Pages/Login";
 
-const Main = withRouter(({ location }) => {
+const Main = withRouter(({ location , handleUsd, usd }) => {
   return (
     <div className="Contents">
-      {!["/Register", "/Login"].includes(location.pathname) ? <Navbar /> : null}
+      {!["/Register", "/Login"].includes(location.pathname) ? <Navbar handleUsd={handleUsd} usd={usd} /> : null}
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={() => <Home usd={usd}/> } />
         <Route path="/donate" exact component={Donations} />
         <Route path="/lend" exact component={Lend} />
         <Route path="/pricing" exact component={Pricing} />
@@ -33,10 +34,17 @@ const Main = withRouter(({ location }) => {
   );
 });
 const App = () => {
+  const [usd,SetUsd] = useState(true)
+
+  const handleUsd = ()=>{
+    SetUsd(!usd);
+    console.log('clickked')
+  }
+
   return (
     <div className="App">
       <Router>
-        <Main />
+        <Main handleUsd={ handleUsd } usd={usd}/>
       </Router>
     </div>
   );
