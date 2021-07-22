@@ -69,8 +69,8 @@ const DISPLAY = styled.div`
   width: 65%;
   margin: 20px auto;
   display: grid;
-  grid-template-columns: 300px 300px 300px;
-  grid-gap: 20px;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 2.5%;
 `;
 
 const Raised = styled.div`

@@ -56,14 +56,14 @@ const Call = styled.div`
   }
 
   div > button {
-    width: 300px;
+    width: 35%;
     height: 50px;
     margin-top: 10px;
     border-radius: 40px;
     border: none;
     color: white;
     background-color: #9c3353;
-    font-size: 18px;
+    font-size: 120%;
   }
 
   div > button:hover {
@@ -71,7 +71,7 @@ const Call = styled.div`
   }
 
   div > p {
-    font-size: 22px;
+    font-size: 140%;
   }
 `;
 
