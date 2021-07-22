@@ -3,14 +3,10 @@ import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export function Navbar() {
+export function Navbar({ handleUsd, usd }) {
   const [active, setActive] = useState("");
 
-  const [usd, setUsd] = useState(false);
 
-  const handleUsdToggle = () => {
-    setUsd(!usd);
-  };
 
   return (
     <div className="NavBar">
@@ -63,11 +59,11 @@ export function Navbar() {
           Contact us{" "}
         </Link>
         <div
-          className={`toggle_switch ${usd && "toggled"}`}
-          onClick={handleUsdToggle}
+          className={`toggle_switch ${!usd && "toggled"}`}
+          onClick={handleUsd}
         >
           <div className="toggle_dial"></div>
-          <div className="toggleText">{usd ? "INR" : "USD"}</div>
+          <div className="toggleText">{!usd ? "INR" : "USD"}</div>
         </div>
       </div>
       <div className="NavBar-rightGrid">

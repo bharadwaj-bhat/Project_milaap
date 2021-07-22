@@ -16,6 +16,7 @@ function LoginForm() {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
+        alert("You have sucessfully logged in");
         return true;
       }
     }

@@ -33,7 +33,12 @@
     {
       "full_name": "Shivansh Tyagi",
       "email": "shiv@gmail.com",
-      "pass": "123456",
+      "pass": "123456"
+    },
+    {
+      "full_name": "vikas tyagi",
+      "email": "vikas@gmail.com",
+      "pass": "999999",
       "id": 6
     }
   ]
