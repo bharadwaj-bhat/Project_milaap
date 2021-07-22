@@ -40,6 +40,18 @@
       "email": "vikas@gmail.com",
       "pass": "999999",
       "id": 6
+    },
+    {
+      "full_name": "Mannu",
+      "email": "m@gmail.com",
+      "pass": "123456",
+      "id": 7
+    },
+    {
+      "full_name": "bhardwaj s",
+      "email": "s@gmail.com",
+      "pass": "123456",
+      "id": 8
     }
   ]
 }
