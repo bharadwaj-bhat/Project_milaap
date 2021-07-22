@@ -79,7 +79,10 @@ input:focus + label {
   border: 1px solid #9c3353;
   margin-top: 5%;
   border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
 }
+
 .main_button {
   background-color: #9c3353;
   color: white;
@@ -90,15 +93,11 @@ input:focus + label {
   border: 1px solid #9c3353;
   border-radius: 20px;
   margin-left: 20px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-/* .search {
-  width: 90%;
-  height: 80%;
-  margin-top: 0px;
-  border: 2px solid #9c3353;
-  border-radius: 40px 0 0 40px;
-  box-shadow: 0 0 5px #9c3353;
-  font-size: 18px;
-  padding-left: 10px;
-} */
+.sign_up:hover,
+.main_button:hover {
+  box-shadow: 0 0 10px 0 rgba(156, 51, 83, 1);
+}

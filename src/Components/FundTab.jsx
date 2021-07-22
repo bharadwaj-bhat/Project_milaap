@@ -66,7 +66,7 @@ const WRAPPER = styled.div`
 const AMOUNT = styled.div``;
 
 const DISPLAY = styled.div`
-  width: 70%;
+  width: 80%;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -95,15 +95,14 @@ const Raised = styled.div`
 console.log(data);
 
 const FundTab = ({ image, title, amount, author, usd }) => {
-  
-  const usdValue = (Number(amount) / 74.32).toFixed(2)
+  const usdValue = (Number(amount) / 74.32).toFixed(2);
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  let inrVal = commaReplacer(amount)
- 
-  let usdVal = commaReplacer(usdValue)
+  let inrVal = commaReplacer(amount);
+
+  let usdVal = commaReplacer(usdValue);
 
   return (
     <>
@@ -128,7 +127,7 @@ const FundTab = ({ image, title, amount, author, usd }) => {
   );
 };
 
-const FundDisplay = ({usd}) => {
+const FundDisplay = ({ usd }) => {
   const [covid, setCovid] = useState(true);
   const [medical, setMedical] = useState(false);
   const [memories, setMemories] = useState(false);
@@ -202,7 +201,7 @@ const FundDisplay = ({usd}) => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
-                  usd = {usd}
+                  usd={usd}
                 />
               );
             })
@@ -214,8 +213,7 @@ const FundDisplay = ({usd}) => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
-                  usd = {usd}
-
+                  usd={usd}
                 />
               );
             })

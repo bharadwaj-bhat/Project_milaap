@@ -93,10 +93,20 @@ export const Login = styled.div`
     background-color: #3b5998;
     width: 20%;
     border: 1px solid #3b5998;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  & > div:nth-child(2) > div:nth-child(2) > button:nth-child(1):hover {
+    box-shadow: 0 0 10px 0 rgba(59, 89, 152, 0.8);
   }
   & > div:nth-child(2) > div:nth-child(2) > button:nth-child(2) {
     background-color: #dd4b39;
     width: 20%;
     border: 1px solid #dd4b39;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  & > div:nth-child(2) > div:nth-child(2) > button:nth-child(2):hover {
+    box-shadow: 0 0 10px 0 rgba(221, 75, 57, 0.8);
   }
 `;
