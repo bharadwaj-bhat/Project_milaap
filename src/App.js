@@ -16,7 +16,7 @@ import { Footer } from "./Components/Footer/Footer";
 import Rform from "./Components/Pages/Register";
 import Lform from "./Components/Pages/Login";
 
-const Main = withRouter(({ location, handleUsd, usd,handleLoggedIn,test }) => {
+const Main = withRouter(({ location, handleUsd, usd,handleLoggedIn,logged }) => {
 
  
 
@@ -24,7 +24,7 @@ const Main = withRouter(({ location, handleUsd, usd,handleLoggedIn,test }) => {
   return (
     <div className="Contents">
       {!["/Register", "/Login"].includes(location.pathname) ? (
-        <Navbar handleUsd={handleUsd} usd={usd} />
+        <Navbar handleUsd={handleUsd} usd={usd} logged={logged}/>
       ) : null}
       <Switch>
         <Route path="/" exact component={() => <Home usd={usd} />} />
@@ -49,13 +49,13 @@ const App = () => {
   };
 
   const handleLoggedIn = (i) => {
-    console.log(i)
+    SetLogged(i.full_name)
   }
 
   return (
     <div className="App">
       <Router>
-        <Main handleUsd={handleUsd} usd={usd} handleLoggedIn={handleLoggedIn} test={'testing from app.j'}/>
+        <Main handleUsd={handleUsd} usd={usd} handleLoggedIn={handleLoggedIn} test={'testing from app.j'} logged={logged}/>
       </Router>
     </div>
   );

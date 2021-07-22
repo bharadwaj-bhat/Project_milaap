@@ -3,10 +3,20 @@ import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export function Navbar({ handleUsd, usd }) {
+function Profile ({logged}) {
+  return (
+    <div className="ProfileDiv">
+      <div>
+        <h2>{logged[0]}</h2>
+      </div>
+
+      <p>{logged}</p>
+    </div>
+  );
+};
+
+export function Navbar({ handleUsd, usd, logged }) {
   const [active, setActive] = useState("");
-
-
 
   return (
     <div className="NavBar">
@@ -70,7 +80,7 @@ export function Navbar({ handleUsd, usd }) {
         <div> {/*for search bar */}</div>
         <StartFundBtn />
         <Link to="/Register">
-          <i className="far fa-user-circle"></i>
+          {logged === "" ? <i className="far fa-user-circle"></i> : <Profile logged={logged}/>}
         </Link>
       </div>
     </div>

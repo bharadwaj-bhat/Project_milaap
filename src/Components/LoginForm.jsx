@@ -21,9 +21,9 @@ function LoginForm({ handleLoggedIn }) {
     for (let i = 0; i < data.length; i++) {
       debugger;
       if (data[i].email === email && data[i].pass === pass) {
-        handleHandler(data[i]);
         setEmail("");
         setPass("");
+        handleHandler(data[i])
         history.push("/");
         return true;
       }
