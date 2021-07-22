@@ -12,7 +12,7 @@ import more1 from "./images/more1.png";
 import { useState } from "react";
 
 const TabWrapper = styled.div`
-  width: 40%;
+  width: 48%;
   margin: auto;
   display: flex;
 `;
@@ -21,6 +21,10 @@ const TAB = styled.div`
   width: 150px;
   height: 120px;
   margin: 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   border: 1px solid black;
   text-align: center;
   font-weight: bold;
@@ -36,6 +40,7 @@ const TAB = styled.div`
 
   img {
     width: 40%;
+    padding:2px 15px;
     margin-top: 10%;
   }
 `;
@@ -74,8 +79,14 @@ const DISPLAY = styled.div`
 `;
 
 const Raised = styled.div`
-  display: flex;
-  margin: 0 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 5fr;
+  margin: -20px 10px 10px 10px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   img {
     width: 50px;
