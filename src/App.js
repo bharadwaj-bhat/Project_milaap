@@ -16,7 +16,11 @@ import { Footer } from "./Components/Footer/Footer";
 import Rform from "./Components/Pages/Register";
 import Lform from "./Components/Pages/Login";
 
-const Main = withRouter(({ location, handleUsd, usd }) => {
+const Main = withRouter(({ location, handleUsd, usd,handleLoggedIn,test }) => {
+
+ 
+
+
   return (
     <div className="Contents">
       {!["/Register", "/Login"].includes(location.pathname) ? (
@@ -29,7 +33,7 @@ const Main = withRouter(({ location, handleUsd, usd }) => {
         <Route path="/pricing" exact component={Pricing} />
         <Route path="/contact" exact component={ContactUs} />
         <Route exact path="/register" component={Rform} />
-        <Route exact path="/login" component={Lform} />
+        <Route exact path="/login" component={() => <Lform handleLoggedIn={(i)=>handleLoggedIn(i)} />} />
       </Switch>
       {!["/Register", "/Login"].includes(location.pathname) ? <Footer /> : null}
     </div>
@@ -37,16 +41,21 @@ const Main = withRouter(({ location, handleUsd, usd }) => {
 });
 const App = () => {
   const [usd, SetUsd] = useState(true);
+  const [logged, SetLogged] = useState('');
+
 
   const handleUsd = () => {
     SetUsd(!usd);
-    console.log("clickked");
   };
+
+  const handleLoggedIn = (i) => {
+    console.log(i)
+  }
 
   return (
     <div className="App">
       <Router>
-        <Main handleUsd={handleUsd} usd={usd} />
+        <Main handleUsd={handleUsd} usd={usd} handleLoggedIn={handleLoggedIn} test={'testing from app.j'}/>
       </Router>
     </div>
   );

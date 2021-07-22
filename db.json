@@ -40,6 +40,12 @@
       "email": "vikas@gmail.com",
       "pass": "999999",
       "id": 6
+    },
+    {
+    "full_name":"Bharadwaj Bhat",
+    "email":"bhat@gmail.com",
+    "pass":"12345",
+    "id":7
     }
   ]
 }
