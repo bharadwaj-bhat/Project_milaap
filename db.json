@@ -42,10 +42,11 @@
       "id": 6
     },
     {
-    "full_name":"Bharadwaj Bhat",
-    "email":"bhat@gmail.com",
-    "pass":"12345",
-    "id":7
+
+      "full_name": "Mannu",
+      "email": "m@gmail.com",
+      "pass": "123456",
+      "id": 7
     }
   ]
 }

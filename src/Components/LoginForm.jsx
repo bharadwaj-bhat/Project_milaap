@@ -1,16 +1,15 @@
 import styles from "../Style.module.css";
 import axios from "axios";
 import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function LoginForm({handleLoggedIn}) {
 
   
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [profile, setProfile] = useState('')
 
-
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -26,9 +25,9 @@ function LoginForm({handleLoggedIn}) {
     for (let i = 0; i < data.length; i++) {
       if (data[i].email === email && data[i].pass === pass) {
         handleHandler(data[i])
-        setEmail("");git 
+        setEmail("");
         setPass("");
-         window.location.href = "/";
+        history.push("/")
         return true;
       }
     }
@@ -36,7 +35,7 @@ function LoginForm({handleLoggedIn}) {
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
-    setProfile(e.target.value)
+  
   };
   const handlePass = (e) => {
     setPass(e.target.value);
@@ -65,9 +64,10 @@ function LoginForm({handleLoggedIn}) {
         />
         <label htmlFor="password">Password</label>
       </div>
+
       {/* <Link to="/">
       </Link> */}
-      <button className={styles.sign_up} onClick={() => { handleLogin() }}>
+      <button className={styles.sign_up} onClick={handleLogin}>
         Login
       </button>
     </form>
