@@ -3,7 +3,7 @@ import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Profile ({logged}) {
+function Profile({ logged }) {
   return (
     <div className="ProfileDiv">
       <div>
@@ -13,7 +13,7 @@ function Profile ({logged}) {
       <p>{logged}</p>
     </div>
   );
-};
+}
 
 export function Navbar({ handleUsd, usd, logged }) {
   const [active, setActive] = useState("");
@@ -80,7 +80,11 @@ export function Navbar({ handleUsd, usd, logged }) {
         <div> {/*for search bar */}</div>
         <StartFundBtn />
         <Link to="/Register">
-          {logged === "" ? <i className="far fa-user-circle"></i> : <Profile logged={logged}/>}
+          {logged === "" ? (
+            <i className="far fa-user-circle"></i>
+          ) : (
+            <Profile logged={logged} />
+          )}
         </Link>
       </div>
     </div>
