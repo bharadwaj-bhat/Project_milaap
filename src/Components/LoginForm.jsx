@@ -3,9 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function LoginForm({handleLoggedIn}) {
-
-  
+function LoginForm({ handleLoggedIn }) {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
@@ -15,19 +13,18 @@ function LoginForm({handleLoggedIn}) {
   };
 
   const handleHandler = (i) => {
-    handleLoggedIn(i)
-  }
-
-  
+    handleLoggedIn(i);
+  };
 
   const handleLogin = async () => {
     let { data } = await axios.get("http://localhost:3001/user");
     for (let i = 0; i < data.length; i++) {
+      debugger;
       if (data[i].email === email && data[i].pass === pass) {
-        handleHandler(data[i])
+        handleHandler(data[i]);
         setEmail("");
         setPass("");
-        history.push("/")
+        history.push("/");
         return true;
       }
     }
@@ -35,7 +32,6 @@ function LoginForm({handleLoggedIn}) {
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
-  
   };
   const handlePass = (e) => {
     setPass(e.target.value);
