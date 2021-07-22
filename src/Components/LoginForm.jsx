@@ -1,6 +1,7 @@
 import styles from "../Style.module.css";
 import axios from "axios";
 import { useState } from "react";
+// import { Link } from "react-router-dom";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,6 @@ function LoginForm() {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
-        console.log("Oh Yeah!! Logged in.");
         return true;
       }
     }
@@ -51,6 +51,8 @@ function LoginForm() {
         />
         <label htmlFor="password">Password</label>
       </div>
+      {/* <Link to="/">
+      </Link> */}
       <button className={styles.sign_up} onClick={handleLogin}>
         Login
       </button>

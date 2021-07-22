@@ -91,3 +91,14 @@ input:focus + label {
   border-radius: 20px;
   margin-left: 20px;
 }
+
+/* .search {
+  width: 90%;
+  height: 80%;
+  margin-top: 0px;
+  border: 2px solid #9c3353;
+  border-radius: 40px 0 0 40px;
+  box-shadow: 0 0 5px #9c3353;
+  font-size: 18px;
+  padding-left: 10px;
+} */

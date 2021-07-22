@@ -3,6 +3,7 @@ import horn from "./images/horn.png";
 import search from "./images/search.png";
 import rhombus from "./images/rhombus.png";
 import rhombus2 from "./images/rhombus2.png";
+// import styles from "../Style.module.css";
 
 const NofeeWrapper = styled.div`
   width: 70%;

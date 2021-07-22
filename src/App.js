@@ -15,7 +15,7 @@ import { Footer } from "./Components/Footer/Footer";
 import Rform from "./Components/Pages/Register";
 import Lform from "./Components/Pages/Login";
 
-const Main = withRouter(({ location }) => {
+const Main = withRouter(({ location, handleLogin }) => {
   return (
     <div className="Contents">
       {!["/Register", "/Login"].includes(location.pathname) ? <Navbar /> : null}

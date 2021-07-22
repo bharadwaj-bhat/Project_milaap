@@ -41,7 +41,7 @@ const TAB = styled.div`
 `;
 
 const WRAPPER = styled.div`
-  width: 300px;
+  width: 100%;
   color: gray;
   margin: 20px;
   box-shadow: 0 0 5px #9c3353;
@@ -66,7 +66,7 @@ const WRAPPER = styled.div`
 const AMOUNT = styled.div``;
 
 const DISPLAY = styled.div`
-  width: 65%;
+  width: 70%;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 30% 30% 30%;
