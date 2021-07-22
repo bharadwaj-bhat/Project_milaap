@@ -1,0 +1,139 @@
+import styled from "styled-components";
+import horn from "./images/horn.png";
+import search from "./images/search.png";
+import rhombus from "./images/rhombus.png";
+import rhombus2 from "./images/rhombus2.png";
+
+const NofeeWrapper = styled.div`
+  width: 70%;
+  height: 80px;
+  margin-top: 20px;
+  margin-left: 150px;
+  padding-right: 20px;
+  box-shadow: 1px 1px gray;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  background-color: #fbf2f5;
+  border-radius: 5px;
+  border-left: 7px solid #9c3353;
+
+  div:nth-child(1) {
+    width: 60%;
+    margin-top: 10px;
+    display: flex;
+    padding-left: 150px;
+  }
+
+  div > div {
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: #9c3353;
+    margin: 10px 0 10px 0;
+  }
+`;
+
+const Wrapper = styled.div`
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+
+  p {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 500;
+  }
+`;
+
+const FORM = styled.form`
+  display: flex;
+  width: 700px;
+  height: 50px;
+  margin: 40px auto;
+
+  input {
+    width: 90%;
+    height: 80%;
+    margin-top: 0px;
+    border: 2px solid #9c3353;
+    border-radius: 40px 0 0 40px;
+    box-shadow: 0 0 5px #9c3353;
+    font-size: 18px;
+    padding-left: 10px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    width: 8%;
+    height: 90%;
+    background-color: #9c3353;
+    border: none;
+    border-radius: 0 40px 40px 0;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+`;
+
+const IconLine = styled.div`
+  display: flex;
+  text-align: center;
+
+  div {
+    width: 50%;
+    margin: 15px;
+    border-bottom: 1px solid #000;
+  }
+
+  img {
+    margin: 0 5px 0 5px;
+  }
+`;
+
+const Search = () => {
+  return (
+    <>
+      <NofeeWrapper>
+        <div>
+          <img src={horn} alt="" />
+          <div>Our crowdfunding platform charges NO fees</div>
+        </div>
+        <p>0%</p>
+      </NofeeWrapper>
+      <Wrapper>
+        <p>Thousands are fundraising online on Milaap</p>
+        <IconLine>
+          <div></div>
+
+          <img src={rhombus2} alt="" />
+          <img src={rhombus} alt="" />
+          <img src={rhombus2} alt="" />
+
+          <div></div>
+        </IconLine>
+        <FORM action="">
+          <input
+            type="text"
+            placeholder="Search by fundraiser, name, title, location etc."
+            name="search"
+          />
+          <button type="submit">
+            <img src={search} alt="" />
+          </button>
+        </FORM>
+      </Wrapper>
+    </>
+  );
+};
+
+export { Search };

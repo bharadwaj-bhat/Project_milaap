@@ -1,9 +1,15 @@
+import { Intro } from "../Intro";
+import { Search } from "../Search";
+import { FundDisplay } from "../FundTab";
+import { Bottom } from "../Bottom";
 
-
-export function Home(){
-    return (
-        <div>
-            <h1> this is the home page </h1>
-        </div>
-    )
+export function Home() {
+  return (
+    <div>
+      <Intro />
+      <Search />
+      <FundDisplay />
+      <Bottom />
+    </div>
+  );
 }
