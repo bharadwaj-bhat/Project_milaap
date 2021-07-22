@@ -3,7 +3,7 @@ import { Login } from "../LoginStyle";
 import { Link } from "react-router-dom";
 import styles from "../../Style.module.css";
 
-function Lform() {
+function Lform({handleLoggedIn}) {
   return (
     <div className={styles.container}>
       <Login>
@@ -25,7 +25,7 @@ function Lform() {
             <button>Facebook</button>
             <button>Google</button>
           </div>
-          <LoginForm />
+          <LoginForm handleLoggedIn={(i)=>handleLoggedIn(i)}/>
           <p style={{ color: "#9c3353", marginTop: "30px" }}>
             Forgot Password?
           </p>

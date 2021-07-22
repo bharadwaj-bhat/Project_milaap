@@ -62,9 +62,9 @@ const FORM = styled.form`
     width: 90%;
     height: 80%;
     margin-top: 0px;
-    border: 2px solid #9c3353;
+    border: 1px solid #9c3353;
     border-radius: 40px 0 0 40px;
-    box-shadow: 0 0 5px #9c3353;
+    box-shadow: 0 0 4px #9c3353;
     font-size: 18px;
     padding-left: 10px;
   }
@@ -75,10 +75,15 @@ const FORM = styled.form`
 
   button {
     width: 8%;
-    height: 90%;
+    height: 83%;
     background-color: #9c3353;
     border: none;
     border-radius: 0 40px 40px 0;
+    align-items:center;
+     img{
+       width:50%;
+     }
+     
   }
 
   button:hover {
