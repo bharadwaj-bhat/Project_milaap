@@ -21,15 +21,9 @@ function LoginForm({ handleLoggedIn }) {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
-<<<<<<< HEAD
         history.push("/");
         console.log("Oh Yeah!! Logged in.");
         return true;
-=======
-        handleHandler(data[i]);
-        history.push("/");
-        break;
->>>>>>> 903ad31bab03ecf806b3d3de42971a6bf8269110
       }
     }
   };
