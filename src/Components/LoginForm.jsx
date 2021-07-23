@@ -15,7 +15,7 @@ function LoginForm({ handleLoggedIn }) {
     handleLoggedIn(i);
   };
 
-  // let cred = false;
+  let validation = false;
   const handleLogin = async () => {
     let { data } = await axios.get("http://localhost:3001/user");
     for (let i = 0; i < data.length; i++) {
@@ -24,16 +24,14 @@ function LoginForm({ handleLoggedIn }) {
         setPass("");
         handleHandler(data[i]);
         history.push("/");
-        // cred = true;
+        validation = true;
         break;
       }
     }
-    // if (!cred) {
-    //   alert("Please check your credentials");
-    // }
-  }
-
-  
+    if (!validation) {
+      alert("Wrong Credentials!!");
+    }
+  };
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
