@@ -1,10 +1,12 @@
 import styles from "../Style.module.css";
 import axios from "axios";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -15,6 +17,7 @@ function LoginForm() {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
+        history.push("/");
         console.log("Oh Yeah!! Logged in.");
         return true;
       }
