@@ -11,30 +11,24 @@ const Wrapper = styled.div`
 
 const IntroWrapper = styled.div`
   width: 35%;
-  margin: 170px 0px 0px 12%;
+  margin: 100px 0px 0px 10%;
   display: flex;
   flex-direction: column;
 
   h1 {
     font-family: sans-serif;
     font-weight: 500;
-    font-size: 2.7rem;
-    letter-spacing: 2px;
   }
 
   h3 {
     margin-top: -10px;
     font-family: sans-serif;
-    font-weight: 500;
-    font-size: 1.4rem;
-    color: rgb(114, 116, 116);
-    letter-spacing: 1px;
+    font-weight: 550;
+    color: gray;
   }
 
   p {
-    font-size: 19px;
-    margin-top:20px;
-    
+    font-size: 22px;
   }
 
   button {
@@ -53,7 +47,7 @@ const IntroWrapper = styled.div`
 `;
 
 const CountWrapper = styled.div`
-  margin-top: 34px;
+  margin-top: 60px;
   display: flex;
   justify-content: space-between;
 
@@ -99,7 +93,7 @@ const HeadBar = styled.div`
     height: 50px;
     font-size: 22px;
     border: none;
-    box-shadow: 0 0 10px -6px #9c3353;
+    box-shadow: 0 0 5px #9c3353;
     border-radius: 5px;
     padding: 0 25px 0 25px;
     background-color: white;

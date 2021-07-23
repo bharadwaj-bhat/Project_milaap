@@ -114,12 +114,6 @@ const FundTab = ({ image, title, amount, author, usd }) => {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  let y = 3500000;
-  
-  let perc = Math.floor((amount / y) * 100);
-  // console.log(perc)
-     
-
   let inrVal = commaReplacer(amount);
 
   let usdVal = commaReplacer(usdValue);
@@ -131,18 +125,7 @@ const FundTab = ({ image, title, amount, author, usd }) => {
         <p>{title}</p>
         <AMOUNT>
           <Raised>
-            {/* <img src={loading} alt="" /> */}
-            <Circle
-              progress={perc}
-              size={50}
-              lineWidth={50}
-              textStyle={{
-                fontSize: "100px",
-                fontWeight: "500",
-              }}
-              progressColor="limegreen"
-              bgColor="rgba(218, 218, 218, 0.568)"
-            />
+            <img src={loading} alt="" />
             <div>
               <div>Raised</div>
               <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
