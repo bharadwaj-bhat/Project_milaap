@@ -64,7 +64,76 @@
       "email": "bhat@gmail.com",
       "pass": "12345",
       "id": 10
+    },
+    {
+      "full_name": "aditya",
+      "email": "abc@gmail.com",
+      "pass": "abc",
+      "id": 11
+    },
+    {
+      "full_name": "aditya Kumar",
+      "email": "aditya@gmail.com",
+      "pass": "aditya",
+      "id": 12
     }
   ],
-  "funds": []
+  "funds": [
+    {
+      "created": "The United Foundation",
+      "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Bengaluru is BREATHLESS! Urgently need O2 Cylinders & Covid Relief!",
+      "raised": 0,
+      "id": 1
+    },
+    {
+      "created": "Project Global Cure",
+      "url": "https://images.milaap.org/milaap/image/upload/v1622742381/production/images/campaign/320360/project_asha_collage_jdz0gz_1622742630.png?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Action Against Hunger",
+      "raised": 0,
+      "id": 2
+    },
+    {
+      "created": "Project Global Cure",
+      "url": "https://images.milaap.org/milaap/image/upload/v1624858577/production/images/campaign/148428/COVID_Campaign_new_banner_hi1tpr_1624858580.png?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "CORONAVIRUS RELIEF FUND - Avoiding the Third Wave, #vaccinatingIndia",
+      "raised": 0,
+      "id": 3
+    },
+    {
+      "created": "Gurunathan Dhanapal",
+      "url": "https://images.milaap.org/milaap/image/upload/v1622626642/production/images/campaign/315704/inCollage_20210520_102551618_tvfnl0_1622626648.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Join Hands With Chennai Feeding Hearts To Support India Covid Relief",
+      "raised": 0,
+      "id": 4
+    },
+    {
+      "created": "Tharapathi B",
+      "url": "https://images.milaap.org/milaap/image/upload/v1625508355/production/images/campaign/347662/Karim_Milaap_ewwbmc_1625508365.png?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Support Family Of Late Mr. Karimullah Shaik",
+      "raised": 0,
+      "id": 5
+    },
+    {
+      "created": "Tavissi Jain",
+      "url": "https://images.milaap.org/milaap/image/upload/v1623168567/production/images/campaign/307094/WhatsApp_Image_2021-05-31_at_11.03.36_AM_1_qx1dok_1623168571.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Help Tiruppur Breathe",
+      "raised": 0,
+      "id": 6
+    },
+    {
+      "created": "Gurunathan Dhanapal",
+      "url": "https://images.milaap.org/milaap/image/upload/v1622626642/production/images/campaign/315704/inCollage_20210520_102551618_tvfnl0_1622626648.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Join Hands With Chennai Feeding Hearts To Support India Covid Relief",
+      "raised": 0,
+      "id": 7
+    },
+    {
+      "created": "Aditya Kumar",
+      "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Need Cylinders For Covid Patients, in my NGO",
+      "raised": 0,
+      "id": 8
+    }
+  ]
 }

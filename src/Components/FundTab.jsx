@@ -10,6 +10,8 @@ import candle1 from "./images/candle1.png";
 import more from "./images/more.png";
 import more1 from "./images/more1.png";
 import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -21,10 +23,10 @@ const TAB = styled.div`
   width: 150px;
   height: 120px;
   margin: 10px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border: 1px solid black;
   text-align: center;
   font-weight: bold;
@@ -40,7 +42,7 @@ const TAB = styled.div`
 
   img {
     width: 40%;
-    padding:2px 15px;
+    padding: 2px 15px;
     margin-top: 10%;
   }
 `;
@@ -143,6 +145,19 @@ const FundDisplay = ({ usd }) => {
   const [medical, setMedical] = useState(false);
   const [memories, setMemories] = useState(false);
   const [other, setOther] = useState(false);
+  const [covidData, setCovidData] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    let { data } = await axios.get(
+      "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
+    );
+    setCovidData(data);
+    console.log(covidData);
+  };
 
   const handleCovid = () => {
     setCovid(true);
@@ -205,13 +220,14 @@ const FundDisplay = ({ usd }) => {
       </TabWrapper>
       <DISPLAY>
         {covid
-          ? data.covid.map((e) => {
+          ? covidData.map((e) => {
               return (
                 <FundTab
-                  image={e.image}
-                  title={e.title}
-                  amount={e.amount}
-                  author={e.author}
+                  key={e.id}
+                  image={e.url}
+                  title={e.des}
+                  amount={e.raised}
+                  author={e.created}
                   usd={usd}
                 />
               );
