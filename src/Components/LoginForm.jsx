@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 function LoginForm({ handleLoggedIn }) {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,13 +18,12 @@ function LoginForm({ handleLoggedIn }) {
   const handleLogin = async () => {
     let { data } = await axios.get("http://localhost:3001/user");
     for (let i = 0; i < data.length; i++) {
-      debugger;
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
-        handleHandler(data[i])
+        handleHandler(data[i]);
         history.push("/");
-        return true;
+        break;
       }
     }
   };

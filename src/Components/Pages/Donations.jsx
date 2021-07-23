@@ -1,9 +1,9 @@
+import { Donation } from "../Donation";
 
-
-export function Donations(){
-    return(
-        <>
-           <h1> this is the donations page</h1>
-        </>
-    )
+export function Donations() {
+  return (
+    <>
+      <Donation />
+    </>
+  );
 }
