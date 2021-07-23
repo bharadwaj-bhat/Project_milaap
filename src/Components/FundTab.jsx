@@ -9,8 +9,9 @@ import candle from "./images/candle.png";
 import candle1 from "./images/candle1.png";
 import more from "./images/more.png";
 import more1 from "./images/more1.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Circle from "react-circle";
+import axios from "axios";
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -160,6 +161,19 @@ const FundDisplay = ({ usd }) => {
   const [medical, setMedical] = useState(false);
   const [memories, setMemories] = useState(false);
   const [other, setOther] = useState(false);
+  const [covidData, setCovidData] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    let { data } = await axios.get(
+      "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
+    );
+    setCovidData(data);
+    console.log(covidData);
+  };
 
   const handleCovid = () => {
     setCovid(true);
@@ -222,13 +236,14 @@ const FundDisplay = ({ usd }) => {
       </TabWrapper>
       <DISPLAY>
         {covid
-          ? data.covid.map((e) => {
+          ? covidData.map((e) => {
               return (
                 <FundTab
-                  image={e.image}
-                  title={e.title}
-                  amount={e.amount}
-                  author={e.author}
+                  key={e.id}
+                  image={e.url}
+                  title={e.des}
+                  amount={e.raised}
+                  author={e.created}
                   usd={usd}
                 />
               );
