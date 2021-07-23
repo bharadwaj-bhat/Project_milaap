@@ -11,11 +11,11 @@ function LoginForm({ handleLoggedIn }) {
     event.preventDefault();
   };
 
-  const handleHandler = (i) => {
-    handleLoggedIn(i);
-  };
+  // const handleHandler = (i) => {
+  //   handleLoggedIn(i);
+  // };
 
-  // let cred = false;
+  let validation = false;
   const handleLogin = async () => {
     let { data } = await axios.get("http://localhost:3001/user");
     for (let i = 0; i < data.length; i++) {
@@ -23,13 +23,13 @@ function LoginForm({ handleLoggedIn }) {
         setEmail("");
         setPass("");
         history.push("/");
-        // cred = true;
+        validation = true;
         break;
       }
     }
-    // if (!cred) {
-    //   alert("Please check your credentials");
-    // }
+    if (!validation) {
+      alert("Wrong Credentials!!");
+    }
   };
 
   const handleEmail = (e) => {
