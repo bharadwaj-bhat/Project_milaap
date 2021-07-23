@@ -22,7 +22,12 @@ const Main = withRouter(
     return (
       <div className="Contents">
         {!["/Register", "/Login", "/Fund"].includes(location.pathname) ? (
-          <Navbar handleUsd={handleUsd} usd={usd} logged={logged} />
+          <Navbar
+            handleUsd={handleUsd}
+            usd={usd}
+            logged={logged}
+            handleLoggedIn={(i) => handleLoggedIn(i)}
+          />
         ) : null}
         <Switch>
           <Route path="/" exact component={() => <Home usd={usd} />} />
@@ -49,14 +54,18 @@ const Main = withRouter(
 );
 const App = () => {
   const [usd, SetUsd] = useState(true);
-  const [logged, SetLogged] = useState("");
+  const [logged, SetLogged] = useState(false);
 
   const handleUsd = () => {
     SetUsd(!usd);
   };
 
   const handleLoggedIn = (i) => {
-    SetLogged(i.full_name);
+    if (i == null) {
+      SetLogged(false);
+    } else {
+      SetLogged(i.full_name);
+    }
   };
 
   return (
@@ -66,7 +75,6 @@ const App = () => {
           handleUsd={handleUsd}
           usd={usd}
           handleLoggedIn={handleLoggedIn}
-          test={"testing from app.j"}
           logged={logged}
         />
       </Router>

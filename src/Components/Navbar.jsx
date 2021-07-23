@@ -3,19 +3,34 @@ import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Profile({ logged }) {
+function Profile({ logged, handleLoggedIn }) {
+
+  const [vis, SetVis] = useState(false)
+
+  const handleClick = () => {
+    SetVis(!vis)
+  }
+
   return (
-    <div className="ProfileDiv">
+    <div onClick = {handleClick} className="ProfileDiv">
+      <span className={ !vis ? 'logOutSpan' : 'logOutVis'}>
+      <button onClick = {(i)=>handleLoggedIn(null)}  className = 'logOutBtn' > Log Out </button>
+      </span>
       <div>
-        <h2>{logged[0]}</h2>
+        <h2 > {logged[0]}</h2>
       </div>
 
-      <p>{logged}</p>
+      <p>{ logged}</p>
     </div>
   );
 }
 
-export function Navbar({ handleUsd, usd, logged }) {
+export function Navbar({
+  handleUsd,
+  usd,
+  logged,
+  handleLoggedIn
+}) {
   const [active, setActive] = useState("");
 
   return (
@@ -78,12 +93,17 @@ export function Navbar({ handleUsd, usd, logged }) {
       </div>
       <div className="NavBar-rightGrid">
         <div> {/*for search bar */}</div>
-        <StartFundBtn />
-        <Link to="/Register">
-          {logged === "" ? (
+        <Link to = {!logged ? "/Register" : "/donate"}>
+          <StartFundBtn title="Donate for  cause" />
+        </Link>
+        <Link to={!logged && "/Register"}>
+          {logged === false ? (
             <i className="far fa-user-circle"></i>
           ) : (
-            <Profile logged={logged} />
+            <Profile
+              logged={logged}
+              handleLoggedIn={(i) => handleLoggedIn(i)}
+            />
           )}
         </Link>
       </div>
