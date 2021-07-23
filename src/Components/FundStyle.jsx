@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Login = styled.div`
+export const Funds = styled.div`
   width: 70%;
   background-color: white;
   min-height: 500px;
@@ -60,8 +60,10 @@ export const Login = styled.div`
     border-image-slice: 1;
   }
   & > div:nth-child(2) > p {
+    width: 40%;
+    text-align: center;
+    margin-top: 8%;
     color: gray;
-    margin-bottom: -4%;
   }
   & > div:nth-child(2) > div {
     width: 100%;
@@ -70,43 +72,8 @@ export const Login = styled.div`
     align-items: center;
     justify-content: center;
   }
-  & > div:nth-child(2) > div > button {
-    background-color: #9c3353;
-    color: white;
-    font-size: 15px;
-    width: 12%;
-    text-align: center;
-    height: 40px;
-    border: 1px solid #9c3353;
-    border-radius: 20px;
-    margin-left: 3%;
-  }
-  & > div:nth-child(2) > div > p > span {
+
+  & > div:nth-child(2) > div > p {
     color: gray;
-  }
-  & > div:nth-child(2) > div:nth-child(1) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  & > div:nth-child(2) > div:nth-child(2) > button:nth-child(1) {
-    background-color: #3b5998;
-    width: 20%;
-    border: 1px solid #3b5998;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  & > div:nth-child(2) > div:nth-child(2) > button:nth-child(1):hover {
-    box-shadow: 0 0 10px 0 rgba(59, 89, 152, 0.8);
-  }
-  & > div:nth-child(2) > div:nth-child(2) > button:nth-child(2) {
-    background-color: #dd4b39;
-    width: 20%;
-    border: 1px solid #dd4b39;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  & > div:nth-child(2) > div:nth-child(2) > button:nth-child(2):hover {
-    box-shadow: 0 0 10px 0 rgba(221, 75, 57, 0.8);
   }
 `;

@@ -3,12 +3,16 @@ import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function LoginForm() {
+function LoginForm({ handleLoggedIn }) {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
+  };
+
+  const handleHandler = (i) => {
+    handleLoggedIn(i);
   };
 
   const handleLogin = async () => {
@@ -17,9 +21,15 @@ function LoginForm() {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
+<<<<<<< HEAD
         history.push("/");
         console.log("Oh Yeah!! Logged in.");
         return true;
+=======
+        handleHandler(data[i]);
+        history.push("/");
+        break;
+>>>>>>> 903ad31bab03ecf806b3d3de42971a6bf8269110
       }
     }
   };
@@ -54,6 +64,9 @@ function LoginForm() {
         />
         <label htmlFor="password">Password</label>
       </div>
+
+      {/* <Link to="/">
+      </Link> */}
       <button className={styles.sign_up} onClick={handleLogin}>
         Login
       </button>

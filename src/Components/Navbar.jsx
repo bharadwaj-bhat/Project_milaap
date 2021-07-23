@@ -3,14 +3,35 @@ import { StartFundBtn } from "./StartFundBtn";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export function Navbar() {
+function Profile({ logged, handleLoggedIn }) {
+
+  const [vis, SetVis] = useState(false)
+
+  const handleClick = () => {
+    SetVis(!vis)
+  }
+
+  return (
+    <div onClick = {handleClick} className="ProfileDiv">
+      <span className={ !vis ? 'logOutSpan' : 'logOutVis'}>
+      <button onClick = {(i)=>handleLoggedIn(null)}  className = 'logOutBtn' > Log Out </button>
+      </span>
+      <div>
+        <h2 > {logged[0]}</h2>
+      </div>
+
+      <p>{ logged}</p>
+    </div>
+  );
+}
+
+export function Navbar({
+  handleUsd,
+  usd,
+  logged,
+  handleLoggedIn
+}) {
   const [active, setActive] = useState("");
-
-  const [usd, setUsd] = useState(false);
-
-  const handleUsdToggle = () => {
-    setUsd(!usd);
-  };
 
   return (
     <div className="NavBar">
@@ -63,18 +84,27 @@ export function Navbar() {
           Contact us{" "}
         </Link>
         <div
-          className={`toggle_switch ${usd && "toggled"}`}
-          onClick={handleUsdToggle}
+          className={`toggle_switch ${!usd && "toggled"}`}
+          onClick={handleUsd}
         >
           <div className="toggle_dial"></div>
-          <div className="toggleText">{usd ? "INR" : "USD"}</div>
+          <div className="toggleText">{!usd ? "INR" : "USD"}</div>
         </div>
       </div>
       <div className="NavBar-rightGrid">
         <div> {/*for search bar */}</div>
-        <StartFundBtn />
-        <Link to="/Register">
-          <i className="far fa-user-circle"></i>
+        <Link to = {!logged ? "/Register" : "/donate"}>
+          <StartFundBtn title="Donate for  cause" />
+        </Link>
+        <Link to={!logged && "/Register"}>
+          {logged === false ? (
+            <i className="far fa-user-circle"></i>
+          ) : (
+            <Profile
+              logged={logged}
+              handleLoggedIn={(i) => handleLoggedIn(i)}
+            />
+          )}
         </Link>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { StartFundBtn } from '../StartFundBtn';
 export function Row2(){
     return (
       <div className = {styles.Row2}>
-        <StartFundBtn />
+        <StartFundBtn title = "Start a fundraiser" />
         <div className={styles.Row2D1}>
           <p> Pricing</p>
           <p> Milaap Reviews</p>

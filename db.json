@@ -31,40 +31,40 @@
       "id": 5
     },
     {
-      "full_name": "shivnsh tyagi",
-      "email": "shivansh@gmail.com",
-      "pass": "789456",
+      "full_name": "Shivansh Tyagi",
+      "email": "shiv@gmail.com",
+      "pass": "123456"
+    },
+    {
+      "full_name": "vikas tyagi",
+      "email": "vikas@gmail.com",
+      "pass": "999999",
       "id": 6
     },
     {
-      "full_name": "nitin chauhan",
-      "email": "nitin@gmail.com",
-      "pass": "9868551551",
+      "full_name": "Mannu",
+      "email": "m@gmail.com",
+      "pass": "123456",
       "id": 7
     },
     {
-      "full_name": "Rishabh Garg",
-      "email": "garg@gmail.com",
+      "full_name": "bhardwaj s",
+      "email": "s@gmail.com",
       "pass": "123456",
       "id": 8
     },
     {
-      "full_name": "",
-      "email": "",
-      "pass": "",
+      "full_name": "jatin sharma",
+      "email": "jatin@gmail.com",
+      "pass": "789456",
       "id": 9
     },
     {
-      "full_name": "abc",
-      "email": "abcd@ymail.com",
-      "pass": "abcd",
+      "full_name": "Bharadwaj",
+      "email": "bhat@gmail.com",
+      "pass": "12345",
       "id": 10
-    },
-    {
-      "full_name": "abc",
-      "email": "abcde@ymail.com",
-      "pass": "abcde",
-      "id": 11
     }
-  ]
+  ],
+  "funds": []
 }

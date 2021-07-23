@@ -19,6 +19,7 @@ function RegisterForm() {
     setName("");
     setEmail("");
     setPass("");
+    alert("Thank You for registering.");
   };
 
   const handleChangeName = (e) => {

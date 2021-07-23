@@ -12,7 +12,7 @@ import more1 from "./images/more1.png";
 import { useState } from "react";
 
 const TabWrapper = styled.div`
-  width: 40%;
+  width: 48%;
   margin: auto;
   display: flex;
 `;
@@ -21,6 +21,10 @@ const TAB = styled.div`
   width: 150px;
   height: 120px;
   margin: 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   border: 1px solid black;
   text-align: center;
   font-weight: bold;
@@ -36,12 +40,13 @@ const TAB = styled.div`
 
   img {
     width: 40%;
+    padding:2px 15px;
     margin-top: 10%;
   }
 `;
 
 const WRAPPER = styled.div`
-  width: 300px;
+  width: 100%;
   color: gray;
   margin: 20px;
   box-shadow: 0 0 5px #9c3353;
@@ -66,7 +71,7 @@ const WRAPPER = styled.div`
 const AMOUNT = styled.div``;
 
 const DISPLAY = styled.div`
-  width: 65%;
+  width: 80%;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -74,8 +79,14 @@ const DISPLAY = styled.div`
 `;
 
 const Raised = styled.div`
-  display: flex;
-  margin: 0 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 5fr;
+  margin: -20px 10px 10px 10px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   img {
     width: 50px;
@@ -94,7 +105,16 @@ const Raised = styled.div`
 
 console.log(data);
 
-const FundTab = ({ image, title, amount, author }) => {
+const FundTab = ({ image, title, amount, author, usd }) => {
+  const usdValue = (Number(amount) / 74.32).toFixed(2);
+  function commaReplacer(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  let inrVal = commaReplacer(amount);
+
+  let usdVal = commaReplacer(usdValue);
+
   return (
     <>
       <WRAPPER>
@@ -105,7 +125,7 @@ const FundTab = ({ image, title, amount, author }) => {
             <img src={loading} alt="" />
             <div>
               <div>Raised</div>
-              <div>₹{amount}</div>
+              <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
             </div>
             <div>
               <div>Created By</div>
@@ -118,7 +138,7 @@ const FundTab = ({ image, title, amount, author }) => {
   );
 };
 
-const FundDisplay = () => {
+const FundDisplay = ({ usd }) => {
   const [covid, setCovid] = useState(true);
   const [medical, setMedical] = useState(false);
   const [memories, setMemories] = useState(false);
@@ -192,6 +212,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd={usd}
                 />
               );
             })
@@ -203,6 +224,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd={usd}
                 />
               );
             })
@@ -214,6 +236,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd={usd}
                 />
               );
             })
@@ -224,6 +247,7 @@ const FundDisplay = () => {
                   title={e.title}
                   amount={e.amount}
                   author={e.author}
+                  usd={usd}
                 />
               );
             })}

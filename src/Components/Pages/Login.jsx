@@ -3,13 +3,13 @@ import { Login } from "../LoginStyle";
 import { Link } from "react-router-dom";
 import styles from "../../Style.module.css";
 
-function Lform() {
+function Lform({handleLoggedIn}) {
   return (
     <div className={styles.container}>
       <Login>
         <div>
           <div>
-            <a href="/Home">
+            <a href="/">
               <img
                 src="https://assets.milaap.org/assets/milaap-trasparent-logo-25f6253e0156e2f82e2c3daf85575d169864e35ffffd21033ac59da0b4dd88e0.png"
                 alt=""
@@ -25,7 +25,7 @@ function Lform() {
             <button>Facebook</button>
             <button>Google</button>
           </div>
-          <LoginForm />
+          <LoginForm handleLoggedIn={(i)=>handleLoggedIn(i)}/>
           <p style={{ color: "#9c3353", marginTop: "30px" }}>
             Forgot Password?
           </p>
