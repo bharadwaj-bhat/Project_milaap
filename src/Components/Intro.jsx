@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import next from "./images/next.png";
+import styles from "../Style.module.css";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -125,7 +127,11 @@ const Intro = () => {
           <h1>Milaap</h1>
           <h3>Free Crowdfunding for India</h3>
           <p>Raise funds online for medical emergencies and social causes</p>
-          <button>Start a fundraiser - it's FREE</button>
+          <Link to="/Fund">
+            <button className={styles.fundRaiser}>
+              Start a fundraiser - it's FREE
+            </button>
+          </Link>
           <CountWrapper>
             <div>
               <p>40,000+</p>
