@@ -50,7 +50,7 @@ const WRAPPER = styled.div`
 
   .amount > p {
     margin-top: 40px;
-    font-size: 117%;
+    font-size: 95%;
     color: #740f2d;
   }
 
