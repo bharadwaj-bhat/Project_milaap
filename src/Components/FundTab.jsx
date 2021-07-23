@@ -10,6 +10,7 @@ import candle1 from "./images/candle1.png";
 import more from "./images/more.png";
 import more1 from "./images/more1.png";
 import { useState } from "react";
+import Circle from 'react-circle'
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -111,6 +112,12 @@ const FundTab = ({ image, title, amount, author, usd }) => {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
 
+  let y = 3500000;
+  
+  let perc = Math.floor((amount / y) * 100);
+  // console.log(perc)
+     
+
   let inrVal = commaReplacer(amount);
 
   let usdVal = commaReplacer(usdValue);
@@ -122,7 +129,18 @@ const FundTab = ({ image, title, amount, author, usd }) => {
         <p>{title}</p>
         <AMOUNT>
           <Raised>
-            <img src={loading} alt="" />
+            {/* <img src={loading} alt="" /> */}
+            <Circle
+              progress={perc}
+              size={50}
+              lineWidth={50}
+              textStyle={{
+                fontSize: "100px",
+                fontWeight: "500",
+              }}
+              progressColor="limegreen"
+              bgColor="rgba(218, 218, 218, 0.568)"
+            />
             <div>
               <div>Raised</div>
               <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
