@@ -6,6 +6,7 @@ import facebook from "./images/facebook.png";
 
 const WRAPPER = styled.div`
   width: 55%;
+  margin-bottom: 20px;
   /* border: 1px solid red; */
 
   .fee {
@@ -76,7 +77,7 @@ const Raised = styled.div`
 
   .amount {
     display: flex;
-    font-size: 115%;
+    font-size: 95%;
   }
 
   .amount > div {

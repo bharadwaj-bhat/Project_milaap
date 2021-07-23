@@ -7,10 +7,11 @@ import upi from "./images/upi.png";
 const WRAPPER = styled.div`
   width: 40%;
   height: 685px;
+  margin-bottom: 20px;
   position: sticky;
   top: 0;
   background: #f7f7f7;
-  box-shadow: -8px 0px 10px 0px #e088a3;
+  box-shadow: -8px 0px 5px 0px #f1c7d4;
 
   .flex {
     margin: 10px;
@@ -50,7 +51,7 @@ const WRAPPER = styled.div`
 
   .amount > p {
     margin-top: 40px;
-    font-size: 117%;
+    font-size: 95%;
     color: #740f2d;
   }
 
