@@ -3,8 +3,9 @@ import { Story } from "./Story";
 import { PayDonation } from "./PayDonation";
 
 const WRAPPER = styled.div`
-  width: 65%;
+  width: 70%;
   margin: auto;
+
   display: flex;
   justify-content: space-between;
 `;
