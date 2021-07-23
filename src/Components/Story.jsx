@@ -76,7 +76,7 @@ const Raised = styled.div`
 
   .amount {
     display: flex;
-    font-size: 115%;
+    font-size: 95%;
   }
 
   .amount > div {
