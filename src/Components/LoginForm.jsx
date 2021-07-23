@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 function LoginForm({ handleLoggedIn }) {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +23,7 @@ function LoginForm({ handleLoggedIn }) {
         setPass("");
         handleHandler(data[i]);
         history.push("/");
+        break;
       }
     }
   };
