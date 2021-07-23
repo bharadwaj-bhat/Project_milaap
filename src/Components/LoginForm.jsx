@@ -11,9 +11,9 @@ function LoginForm({ handleLoggedIn }) {
     event.preventDefault();
   };
 
-  const handleHandler = (i) => {
-    handleLoggedIn(i);
-  };
+  // const handleHandler = (i) => {
+  //   handleLoggedIn(i);
+  // };
 
   let validation = false;
   const handleLogin = async () => {
@@ -22,7 +22,6 @@ function LoginForm({ handleLoggedIn }) {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
-        handleHandler(data[i]);
         history.push("/");
         validation = true;
         break;
