@@ -6,8 +6,11 @@ import { useState } from "react";
 function Profile ({logged}) {
   return (
     <div className="ProfileDiv">
+      <span className = 'logOutSpan'>
+        <button> log out </button>
+      </span>
       <div>
-        <h2>{logged[0]}</h2>
+        <h2 >{logged[0]}</h2>
       </div>
 
       <p>{logged}</p>
