@@ -31,7 +31,15 @@ const WRAPPER = styled.div`
   .tax {
     width: 100%;
     padding: 7px 0 7px 0;
-    background: #cccaca;
+    background: rgb(243, 243, 243);
+    height:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    p{
+      font-size:0.9rem;
+    }
   }
 
   .tax span {
@@ -135,11 +143,20 @@ const Creator = styled.div`
   justify-content: space-between;
 
   .card {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: ;
+    align-items:center;
     width: 48%;
     height: 80px;
-    border: 1px solid #dad0d0;
+    border: 1px solid rgba(184, 179, 179, 0.719);
+    border-radius: 3px;
+  }
+
+  .card div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .card img {
@@ -147,9 +164,27 @@ const Creator = styled.div`
     height: 50px;
   }
 
-  .card div > div:nth-child(1) {
-    color: gray;
-    font-size: 95%;
+  .card p {
+    font-size: 0.8rem;
+    color: grey;
+  }
+  .card h4 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: -8px;
+  }
+
+  .Iconimg {
+    margin-left: 8px;
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    background: rgb(237, 218, 224);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(156, 51, 83);
   }
 `;
 const Story = () => {
@@ -199,24 +234,25 @@ const Story = () => {
               alt=""
             />
             <div>
-              <div>Creator</div>
-              <div>The United Foundation India</div>
+              <p className="p">Created by </p>
+              <h4>The United Foundation India</h4>
             </div>
           </div>
 
           <div className="card">
-            <img
-              src="https://images.milaap.org/milaap/image/upload/v1578828850/production/images/user/2304965/tuf_icon_1578827491.jpg?crop=faces&format=jpg&height=50&mode=crop&width=50"
-              alt=""
-            />
+            <div className="Iconimg">
+              <h5> TU </h5>
+            </div>
             <div>
-              <div>The Fundraiser will Benefit</div>
-              <div>The United Foundation India</div>
+              <p className="p">The Fundraiser will Benefit</p>
+              <h4>The United Foundation India</h4>
             </div>
           </div>
         </Creator>
         <div className="tax">
-          80G tax benefits for <span>INR donations</span>
+          <p>
+            80G tax benefits for <span>INR donations</span>
+          </p>
         </div>
         <StoryText />
       </WRAPPER>
