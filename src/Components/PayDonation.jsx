@@ -9,24 +9,24 @@ const WRAPPER = styled.div`
   height: 685px;
   margin-bottom: 20px;
   position: sticky;
-  margin-top:60px;
+  margin-top: 60px;
   top: 0;
   background: #f7f7f7;
   box-shadow: -8px 0px 15px -5px #f1c7d4;
 
   .flex {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    margin-left:15px;
-    grid-gap:5px;
-    justify:center;
-    align-items;center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 15px;
+    grid-gap: 5px;
+    justify-content: center;
+    align-items: center;
   }
   .flex1 {
     margin: 10px;
     display: grid;
-    grid-template-columns:1fr 4fr;
-    grid-gap:95px;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 95px;
     justify-content: space-between;
     align-items: center;
   }
@@ -52,25 +52,24 @@ const WRAPPER = styled.div`
     margin: 20px;
     display: flex;
     justify-content: flex-start;
-    letter-spacing:1px;
+    letter-spacing: 1px;
 
-    .raised{
-      color:gray;
-      font-weight:500;
-      font-size:1rem;
-      margin-bottom:-10px;
+    .raised {
+      color: gray;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: -10px;
     }
 
-  .amt1{
-    color: rgb(156,51,83);
-    font-weight:600;
+    .amt1 {
+      color: rgb(156, 51, 83);
+      font-weight: 600;
 
-     span{
-       color:gray;
-       font-weight:400;
-     }
-  }
-
+      span {
+        color: gray;
+        font-weight: 400;
+      }
+    }
   }
 
   .amount img {
@@ -93,7 +92,6 @@ const WRAPPER = styled.div`
     width: 100%;
   }
 `;
-
 
 const BUTTON = styled.button`
   width: 90%;
@@ -179,8 +177,8 @@ const PayDonation = () => {
         <div className="amount">
           <img src={loading} alt="" />
           <div>
-            <p className = "raised"> Raised </p>
-            <p className = "amt1">
+            <p className="raised"> Raised </p>
+            <p className="amt1">
               ₹25,12,235 <span>of ₹30,12,658</span>
             </p>
           </div>

@@ -12,7 +12,7 @@ function FundForm() {
   const handleFund = async () => {
     await axios.post("http://localhost:3001/funds", {
       created: created,
-      url: "https://images.squarespace-cdn.com/content/v1/5c47de21a2772cff2c0212be/1549742325480-RMHFKANMOTV5JVFU80FI/Milaap+Logo-08.jpg?format=1000w",
+      url: "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
       des: des,
       raised: 0,
     });

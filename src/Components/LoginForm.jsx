@@ -22,7 +22,6 @@ function LoginForm({ handleLoggedIn }) {
       if (data[i].email === email && data[i].pass === pass) {
         setEmail("");
         setPass("");
-        handleHandler(data[i]);
         history.push("/");
         // cred = true;
         break;
@@ -31,9 +30,7 @@ function LoginForm({ handleLoggedIn }) {
     // if (!cred) {
     //   alert("Please check your credentials");
     // }
-  }
-
-  
+  };
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
