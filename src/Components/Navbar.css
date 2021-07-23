@@ -145,6 +145,7 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
   align-items: center;
+  position: relative;
 }
 .ProfileDiv div{
   font-size: 1rem;
@@ -158,6 +159,7 @@
   background-color: rgba(207, 207, 207, 0.377);
   color:grey;
   border-radius: 50%;
+  text-decoration: none;
 }
 
 
@@ -171,12 +173,44 @@
 .logOutSpan{
   visibility: hidden;
   width:140px;
+  height: 40px;
+  top:60px;
+  left:40px;
+  outline:1px solid var(--primary);
+  background-color: white;
+  padding: 3px 8px;
   text-align: center;
   position: absolute;
   z-index:3;
-  transition:opacity 0.3s;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logOutSpan:hover{
-  visibility: visible;
+.logOutBtn{
+  border:none;
+  border-radius: 20px;
+  padding:4px 15px;
+  background-color: var(--primary);
+  color:rgb(255, 255, 255);
+  margin-top: 3px;;
 }
+
+.logOutBtn:hover{
+  cursor: pointer;
+}
+
+.logOutVis{
+  visibility: visible;
+  width:140px;
+  height: 30px;
+  top:60px;
+  left:40px;
+  outline:1px solid var(--primary);
+  background-color: white;
+  padding: 3px 8px;
+  text-align: center;
+  position: absolute;
+  z-index:3;
+}
+
