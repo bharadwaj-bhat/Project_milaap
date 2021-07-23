@@ -9,7 +9,7 @@ export function StyledCard() {
                 <div className={styles.innerStyledCard}>
                     <div>
                         <h2> Do you want to raise funds for a medical emergency? </h2>
-                        <StartFundBtn title = 'Start a Fundraiser '/>
+                        <StartFundBtn/>
                     </div>
             </div>
             </div>

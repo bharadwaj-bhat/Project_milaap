@@ -1,7 +1,7 @@
 import './Navbar.css'
 
-export function StartFundBtn({title}){
+export function StartFundBtn(){
     return (
-        <button className = 'StartFundBtn'> {title} </button>
+        <button className = 'StartFundBtn'> Start a fundraiser </button>
     )
 }
