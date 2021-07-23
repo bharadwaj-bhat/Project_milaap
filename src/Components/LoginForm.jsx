@@ -15,6 +15,7 @@ function LoginForm({ handleLoggedIn }) {
     handleLoggedIn(i);
   };
 
+  // let cred = false;
   const handleLogin = async () => {
     let { data } = await axios.get("http://localhost:3001/user");
     for (let i = 0; i < data.length; i++) {
@@ -22,10 +23,13 @@ function LoginForm({ handleLoggedIn }) {
         setEmail("");
         setPass("");
         history.push("/");
-        console.log("Oh Yeah!! Logged in.");
-        return true;
+        // cred = true;
+        break;
       }
     }
+    // if (!cred) {
+    //   alert("Please check your credentials");
+    // }
   };
 
   const handleEmail = (e) => {
