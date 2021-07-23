@@ -12,12 +12,12 @@ const WRAPPER = styled.div`
 
 const Donation = () => {
   return (
-    <>
+    
       <WRAPPER>
         <Story />
         <PayDonation />
       </WRAPPER>
-    </>
+    
   );
 };
 

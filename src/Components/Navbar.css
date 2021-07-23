@@ -127,7 +127,7 @@
   font-size: 0.9rem;
   text-align: center;
   left: 5px;
-  top: 6px;
+  top: 7px;
   color: white;
 }
 
@@ -136,7 +136,7 @@
 }
 
 .toggled .toggleText {
-  top: 6px;
+  top: 7px;
   left: -20px;
 }
 

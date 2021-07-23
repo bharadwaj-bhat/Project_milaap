@@ -6,8 +6,8 @@ import facebook from "./images/facebook.png";
 
 const WRAPPER = styled.div`
   width: 55%;
+  margin-top: 70px;
   margin-bottom: 20px;
-  /* border: 1px solid red; */
 
   .fee {
     width: 100%;
@@ -15,7 +15,7 @@ const WRAPPER = styled.div`
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #d3cece;
+    background-color: rgb(242, 241, 241);
     border-radius: 0 0 5px 5px;
   }
 
