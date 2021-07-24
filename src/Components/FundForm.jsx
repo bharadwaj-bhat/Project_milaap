@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function FundForm({handleFirst}) {
+function FundForm({ handleFirst }) {
   const [created, setCreated] = useState("");
   const [des, setDes] = useState("");
   const [amt, setAmt] = useState("");
@@ -24,7 +24,8 @@ function FundForm({handleFirst}) {
       created: created,
       url: "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
       des: des,
-      raised: amt,
+      target: amt,
+      raised: 0,
     });
     notify();
   };
@@ -81,10 +82,13 @@ function FundForm({handleFirst}) {
           />
           <label htmlFor="amt">Amount (₹)</label>
         </div>
-        <button className={styles.sign_up} onClick={(i) => {
-          handleFund()
-          handleFirst("")
-        }}>
+        <button
+          className={styles.sign_up}
+          onClick={(i) => {
+            handleFund();
+            handleFirst("");
+          }}
+        >
           Start a fundraiser
         </button>
       </form>

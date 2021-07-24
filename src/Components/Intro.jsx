@@ -79,11 +79,13 @@ const CountWrapper = styled.div`
 
 const ImageWrapper = styled.div`
   width: 40%;
+  height:60%;
 
   img {
+    margin-top:80px;
     height: 550px;
     width: 100%;
-    border-radius: 45% 0 45% 50%;
+    border-radius: 45% 0% 45% 50%;
   }
 `;
 

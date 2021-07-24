@@ -10,12 +10,12 @@ const WRAPPER = styled.div`
   justify-content: space-between;
 `;
 
-const Donation = () => {
+const Donation = ({cardData}) => {
   return (
     
       <WRAPPER>
-        <Story />
-        <PayDonation />
+        <Story cardData= {cardData} />
+        <PayDonation cardData = {cardData} />
       </WRAPPER>
     
   );

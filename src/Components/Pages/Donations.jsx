@@ -1,9 +1,9 @@
 import { Donation } from "../Donation";
 
-export function Donations() {
+export function Donations({cardData}) {
   return (
     <>
-      <Donation />
+      <Donation cardData={ cardData }/>
     </>
   );
 }

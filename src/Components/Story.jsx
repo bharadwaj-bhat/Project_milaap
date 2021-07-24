@@ -3,6 +3,8 @@ import styled from "styled-components";
 import loading from "./images/loading.png";
 import whatsapp from "./images/whatsapp.png";
 import facebook from "./images/facebook.png";
+import Circle from "react-circle";
+
 
 const WRAPPER = styled.div`
   width: 55%;
@@ -187,7 +189,17 @@ const Creator = styled.div`
     color: rgb(156, 51, 83);
   }
 `;
-const Story = () => {
+const Story = ({cardData}) => {
+
+  function commaReplacer(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+  let perc = Math.floor((cardData.amount / cardData.target) * 100);
+
+
+  let amount = commaReplacer(cardData.amount);
+  let target = commaReplacer(cardData.target)
+  
   return (
     <>
       <WRAPPER>
@@ -195,20 +207,25 @@ const Story = () => {
           Milaap will not charge any fee on your donation to this campaign.
         </p>
 
-        <h2>
-          Bengaluru is BREATHLESS! Urgently need O2 Cylinders Covid Relief!
-        </h2>
-        <img
-          src="https://images.milaap.org/milaap/image/upload/v1619518760/production/images/campaign/282210/PicsArt_04-27-03.22.53_dz0cvh_1619520281.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603"
-          alt=""
-        />
+        <h2>{cardData.title}</h2>
+        <img src={cardData.image} alt="" />
         <Raised>
           <div className="amount">
-            <img src={loading} alt="" />
+            <Circle
+              progress={perc}
+              size={70}
+              lineWidth={55}
+              textStyle={{
+                fontSize: "100px",
+                fontWeight: "500",
+              }}
+              progressColor="limegreen"
+              bgColor="rgba(218, 218, 218, 0.568)"
+            />
             <div>
               <div>Raised</div>
               <div>
-                ₹25,12,235 <span>of ₹30,12,658</span>
+                ₹{amount} <span>of ₹{target}</span>
               </div>
             </div>
           </div>
@@ -235,7 +252,7 @@ const Story = () => {
             />
             <div>
               <p className="p">Created by </p>
-              <h4>The United Foundation India</h4>
+              <h4>{cardData.author}</h4>
             </div>
           </div>
 
@@ -245,7 +262,7 @@ const Story = () => {
             </div>
             <div>
               <p className="p">The Fundraiser will Benefit</p>
-              <h4>The United Foundation India</h4>
+              <h4>{cardData.author}</h4>
             </div>
           </div>
         </Creator>
