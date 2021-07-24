@@ -18,7 +18,16 @@ import Lform from "./Components/Pages/Login";
 import Fform from "./Components/Pages/Fund";
 
 const Main = withRouter(
-  ({ location, handleUsd, usd, handleLoggedIn, logged , first, handleFirst}) => {
+  ({
+    location,
+    handleUsd,
+    usd,
+    handleLoggedIn,
+    logged,
+    first,
+    handleFirst,
+    handleCardData
+  }) => {
     return (
       <div className="Contents">
         {!["/Register", "/Login", "/Fund"].includes(location.pathname) ? (
@@ -30,13 +39,38 @@ const Main = withRouter(
           />
         ) : null}
         <Switch>
-          <Route path="/" exact component={() => <Home usd={usd} first={first} handleFirst={(i)=>{handleFirst(i)}}/>} />
+          <Route
+            path="/"
+            exact
+            component={() => (
+              <Home
+                usd={usd}
+                first={first}
+                handleFirst={(i) => {
+                  handleFirst(i);
+                }}
+                handleCardData={(i) => {
+                  handleCardData(i)
+                }}
+              />
+            )}
+          />
           <Route path="/donate" exact component={Donations} />
           <Route path="/lend" exact component={Lend} />
           <Route path="/pricing" exact component={Pricing} />
           <Route path="/contact" exact component={ContactUs} />
           <Route exact path="/register" component={Rform} />
-          <Route exact path="/fund" component={ ()=> <Fform handleFirst={(i)=>{handleFirst(i)}}/>} />
+          <Route
+            exact
+            path="/fund"
+            component={() => (
+              <Fform
+                handleFirst={(i) => {
+                  handleFirst(i);
+                }}
+              />
+            )}
+          />
           <Route
             exact
             path="/login"
@@ -55,15 +89,17 @@ const Main = withRouter(
 const App = () => {
   const [usd, SetUsd] = useState(true);
   const [logged, SetLogged] = useState(false);
-  const [first, SetFirst] = useState("")
+  const [first, SetFirst] = useState("");
+
+  const [cardData, SetCardData] = useState("");
 
   const handleUsd = () => {
     SetUsd(!usd);
   };
 
-  const handleFirst = (i)=>{
-      SetFirst(i)
-  }
+  const handleFirst = (i) => {
+    SetFirst(i);
+  };
 
   const handleLoggedIn = (i) => {
     if (i == null) {
@@ -71,6 +107,10 @@ const App = () => {
     } else {
       SetLogged(i.full_name);
     }
+  };
+
+  const handleCardData = (i) => {
+    SetCardData(i);
   };
 
   return (
@@ -82,7 +122,8 @@ const App = () => {
           handleLoggedIn={handleLoggedIn}
           logged={logged}
           first={first}
-          handleFirst= {(i)=>handleFirst(i)}
+          handleFirst={(i) => handleFirst(i)}
+          handleCardData={(i) => handleCardData(i)}
         />
       </Router>
     </div>
