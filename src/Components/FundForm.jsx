@@ -4,7 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function FundForm() {
+function FundForm({handleFirst}) {
   const [created, setCreated] = useState("");
   const [des, setDes] = useState("");
   const [amt, setAmt] = useState("");
@@ -81,7 +81,10 @@ function FundForm() {
           />
           <label htmlFor="amt">Amount (₹)</label>
         </div>
-        <button className={styles.sign_up} onClick={handleFund}>
+        <button className={styles.sign_up} onClick={(i) => {
+          handleFund()
+          handleFirst("")
+        }}>
           Start a fundraiser
         </button>
       </form>

@@ -3,7 +3,7 @@ import { Funds } from "../FundStyle";
 import styles from "../../Style.module.css";
 import {Link} from 'react-router-dom'
 
-function Fform() {
+function Fform({handleFirst}) {
   return (
     <div className={styles.fund_container}>
       <Funds>
@@ -21,7 +21,7 @@ function Fform() {
         </div>
         <div>
           <p>Start a Fundraiser now!</p>
-          <FundForm />
+          <FundForm handleFirst= {(i)=>handleFirst(i)} />
         </div>
       </Funds>
     </div>
