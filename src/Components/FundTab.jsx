@@ -104,7 +104,6 @@ const Raised = styled.div`
   }
 `;
 
-console.log(data);
 
 const FundTab = ({ image, title, amount, author, usd }) => {
   const usdValue = (Number(amount) / 74.32).toFixed(2);
@@ -115,7 +114,6 @@ const FundTab = ({ image, title, amount, author, usd }) => {
   let y = 3500000;
 
   let perc = Math.floor((amount / y) * 100);
-  // console.log(perc)
 
   let inrVal = commaReplacer(amount);
 
@@ -127,7 +125,7 @@ const FundTab = ({ image, title, amount, author, usd }) => {
         <img src={image} alt="" />
         <p>{title}</p>
         <AMOUNT>
-          <Raised>
+          <Raised>  
             {/* <img src={loading} alt="" /> */}
             <Circle
               progress={perc}
@@ -155,23 +153,34 @@ const FundTab = ({ image, title, amount, author, usd }) => {
   );
 };
 
-const FundDisplay = ({ usd }) => {
+const FundDisplay = ({ usd , first, handleFirst}) => {
   const [covid, setCovid] = useState(true);
   const [medical, setMedical] = useState(false);
   const [memories, setMemories] = useState(false);
   const [other, setOther] = useState(false);
   const [covidData, setCovidData] = useState([]);
+  const [dependency,setDependensy] = useState(false)
 
+  
   useEffect(() => {
-    getData();
-  }, []);
+    if (first === "") {
+      getData();
+    }
+    else{
+      setCovidData(first)
+    }
+  },[]);
+  
 
   const getData = async () => {
     let { data } = await axios.get(
       "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
-    );
-    setCovidData(data);
-    console.log(covidData);
+    )
+   
+      setCovidData(data);
+    console.log(covidData, "the data from fundsTab"); 
+    handleFirst(data); 
+    
   };
 
   const handleCovid = () => {
