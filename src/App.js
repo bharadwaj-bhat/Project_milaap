@@ -17,6 +17,10 @@ import Rform from "./Components/Pages/Register";
 import Lform from "./Components/Pages/Login";
 import Fform from "./Components/Pages/Fund";
 
+
+
+
+
 const Main = withRouter(
   ({
     location,
@@ -26,7 +30,8 @@ const Main = withRouter(
     logged,
     first,
     handleFirst,
-    handleCardData
+    handleCardData,
+    cardData,
   }) => {
     return (
       <div className="Contents">
@@ -50,12 +55,16 @@ const Main = withRouter(
                   handleFirst(i);
                 }}
                 handleCardData={(i) => {
-                  handleCardData(i)
+                  handleCardData(i);
                 }}
               />
             )}
           />
-          <Route path="/donate" exact component={Donations} />
+          <Route
+            path="/donate"
+            exact
+            component={() => <Donations cardData={cardData}/>}
+          />
           <Route path="/lend" exact component={Lend} />
           <Route path="/pricing" exact component={Pricing} />
           <Route path="/contact" exact component={ContactUs} />
@@ -124,6 +133,7 @@ const App = () => {
           first={first}
           handleFirst={(i) => handleFirst(i)}
           handleCardData={(i) => handleCardData(i)}
+          cardData = {cardData}
         />
       </Router>
     </div>
@@ -131,3 +141,4 @@ const App = () => {
 };
 
 export default App;
+

@@ -3,6 +3,7 @@ import donation from "./images/donation.png";
 import loading from "./images/loading.png";
 import qr from "./images/qr.png";
 import upi from "./images/upi.png";
+import Circle from "react-circle"
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -162,7 +163,17 @@ const QRCODE = styled.div`
   }
 `;
 
-const PayDonation = () => {
+const PayDonation = ({ cardData }) => {
+  
+  
+  function commaReplacer(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  }
+  let perc = Math.floor((cardData.amount / cardData.target) * 100);
+
+  let amount = commaReplacer(cardData.amount);
+  let target = commaReplacer(cardData.target);
+
   return (
     <>
       <WRAPPER>
@@ -175,11 +186,22 @@ const PayDonation = () => {
         </div>
 
         <div className="amount">
-          <img src={loading} alt="" />
-          <div>
+          <Circle
+            progress={perc}
+            size={75}
+            lineWidth={55}
+            textStyle={{
+              fontSize: "100px",
+              fontWeight: "500",
+            }}
+            progressColor="limegreen"
+            bgColor="rgba(218, 218, 218, 0.568)"
+          />
+
+          <div style ={{marginLeft:'60px'}}>
             <p className="raised"> Raised </p>
             <p className="amt1">
-              ₹25,12,235 <span>of ₹30,12,658</span>
+              ₹{amount} <span>of ₹{target}</span>
             </p>
           </div>
         </div>

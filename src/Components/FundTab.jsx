@@ -12,6 +12,7 @@ import more1 from "./images/more1.png";
 import { useState, useEffect } from "react";
 import Circle from "react-circle";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -105,14 +106,21 @@ const Raised = styled.div`
   }
 `;
 
-
-const FundTab = ({ image, title, amount, author, usd, handleCardData }) => {
+const FundTab = ({
+  image,
+  title,
+  amount,
+  author,
+  usd,
+  handleCardData,
+  target,
+}) => {
   const usdValue = (Number(amount) / 74.32).toFixed(2);
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  let y = 3500000;
+  let y = target;
 
   let perc = Math.floor((amount / y) * 100);
 
@@ -120,13 +128,26 @@ const FundTab = ({ image, title, amount, author, usd, handleCardData }) => {
 
   let usdVal = commaReplacer(usdValue);
 
-  const handleCardClick = () => {
-    console.log(image,title,amount,author)
-  }
+  let payload = {
+    image,
+    title,
+    amount,
+    author,
+    target,
+  };
+
+  // const handleCardClick = (payload) => {
+  //   handleCardData(payload);
+  // };
 
   return (
     <>
-      <WRAPPER onClick = {handleCardClick}>
+      <Link to = '/donate'
+      style={{textDecoration: 'none'}}
+      >
+      <WRAPPER
+        onClick = {(i)=> handleCardData(payload)}
+      >
         <img src={image} alt="" />
         <p>{title}</p>
         <AMOUNT>
@@ -153,7 +174,8 @@ const FundTab = ({ image, title, amount, author, usd, handleCardData }) => {
             </div>
           </Raised>
         </AMOUNT>
-      </WRAPPER>
+        </WRAPPER>
+        </Link>
     </>
   );
 };
@@ -180,7 +202,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
     );
 
     setCovidData(data);
-    console.log(covidData, "the data from fundsTab");
+    console.log(data, "the data from fundsTab");
     handleFirst(data);
   };
 
@@ -254,6 +276,8 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.raised}
                   author={e.created}
                   usd={usd}
+                  target={e.target}
+                  handleCardData = {(i)=>{handleCardData(i)}}
                 />
               );
             })
