@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import pink from "./images/pink.jpg";
 import rhombus from "./images/rhombus.png";
 import rhombus2 from "./images/rhombus2.png";
 
@@ -40,7 +39,7 @@ const Wrapper = styled.div`
 
 const Call = styled.div`
   height: 100px;
-  background-image: url(${pink});
+  background: rgb(156 51 83);
   padding-top: 40px;
 
   div {
