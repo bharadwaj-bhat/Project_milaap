@@ -100,7 +100,15 @@ const App = () => {
   const [logged, SetLogged] = useState(false);
   const [first, SetFirst] = useState("");
 
-  const [cardData, SetCardData] = useState("");
+  const [cardData, SetCardData] = useState({
+    amount: 2500783,
+    author: "The United Foundation",
+    image:
+      "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+    target: 4000000,
+    title:
+      "Bengaluru is BREATHLESS! Urgently need O2 Cylinders & Covid Relief!",
+  });
 
   const handleUsd = () => {
     SetUsd(!usd);
