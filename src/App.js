@@ -36,7 +36,7 @@ const Main = withRouter(
           <Route path="/pricing" exact component={Pricing} />
           <Route path="/contact" exact component={ContactUs} />
           <Route exact path="/register" component={Rform} />
-          <Route exact path="/fund" component={Fform} />
+          <Route exact path="/fund" component={ ()=> <Fform handleFirst={(i)=>{handleFirst(i)}}/>} />
           <Route
             exact
             path="/login"
