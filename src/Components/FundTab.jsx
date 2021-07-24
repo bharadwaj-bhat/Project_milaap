@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import loading from "./images/loading.png";
 import data from "../FundDB.json";
 import virus from "./images/virus.png";
 import virus1 from "./images/virus1.png";
