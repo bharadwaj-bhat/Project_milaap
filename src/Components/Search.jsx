@@ -73,17 +73,20 @@ const FORM = styled.form`
     outline: none;
   }
 
+  input::placeholder {
+    opacity: 1;
+  }
+
   button {
     width: 8%;
     height: 83%;
     background-color: #9c3353;
     border: none;
     border-radius: 0 40px 40px 0;
-    align-items:center;
-     img{
-       width:50%;
-     }
-     
+    align-items: center;
+    img {
+      width: 50%;
+    }
   }
 
   button:hover {
