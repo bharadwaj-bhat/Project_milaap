@@ -8,7 +8,8 @@ import rhombus2 from "./images/rhombus2.png";
 const NofeeWrapper = styled.div`
   width: 70%;
   height: 80px;
-  margin-top: 20px;
+  margin-top: -60px;
+  z-index:2;
   margin-left: 150px;
   padding-right: 20px;
   box-shadow: 1px 1px gray;

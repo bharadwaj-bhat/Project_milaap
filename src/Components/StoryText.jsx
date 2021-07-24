@@ -33,6 +33,9 @@ const BUTTON = styled.button`
 const Story = styled.div`
   margin-top: 40px;
   font-family: sans-serif;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   .title {
     word-spacing: 2mm;
     font-weight: bold;
@@ -42,6 +45,10 @@ const Story = styled.div`
     line-height: 140%;
     word-spacing: 2mm;
     margin-bottom: 40px;
+  }
+  .img{
+    width:70%;
+    margin:auto;
   }
 `;
 
@@ -102,24 +109,31 @@ const StoryText = () => {
         </Button>
         <Story>
           <p className="title">
-            India has set a worldwide record nobody wants. The country has
-            topped the number of global daily Coronavirus cases. Today, as you
-            read this Bengaluru Urban is the worst hit district in the country
-            with the highest active Coronavirus caseload of over 1.5 lakhs.
+            Milaap is an online crowdfunding platform that enables anyone across
+            India to raise funds for healthcare, education, sports, disaster
+            relief and other personal causes, with great ease. Founded in 2010
+            by a team of young and passionate entrepreneurs, Milaap has
+            pioneered the development of person to person giving in India.
           </p>
           <p className="desc">
-            The surging count is weighing down heavy on the existing medical
-            infrastructure in the city. The hospital ICUs and beds are full,
-            forcing Covid-19 patients to rely on Oxygen support at home. The
-            situation is out of control and the city is crying for help. There
-            is an urgent need for Oxygen Cylinders, Ambulance Service, Medical
-            Aid and 24/7 Helpline Support for Bed Allocation, Plasma, Covid-19
-            Deceased Burial Service, etc. The United Foundation has been active
-            in Relief Aid since the pandemic began in March last year. Read on
-            to know how you can support!
+            Crowdfunding can be a quick and easy way to meet unanticipated,
+            pressing needs. Today, anyone with a smartphone can participate in
+            making a difference with great ease. More and more people are now
+            raising funds online to tackle emergencies more efficiently.
+            Increasing digital access and the convenience of online payments are
+            driving more and more Indians to take the digital route to mobilize
+            greater support for urgent needs on time. India’s private healthcare
+            spending is estimated at $90 billion a year. Of this, about $60
+            billion is out-of-pocket: from savings, borrowings and support from
+            friends and family. This is where crowdfunding plays a role,
+            bridging the gap, and making it easy to both ask for and render
+            financial assistance. People have always turned to their friends,
+            family and communities at a time when a significant amount of money
+            is required to deal with urgent medical crises.
           </p>
           <img
-            src="https://images.milaap.org/milaap/image/upload/v1619592401/production/images/uploader_images/The_United_Foundation_-_Oxygen_Cylinder_with_Mercy_Mission_1619592399.jpg?format=jpg&mode=max&width=603"
+            className="img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHNUebvd-EZxYPCKV2pSmquTvjK5Ed48zFrQ&usqp=CAU"
             alt=""
           />
         </Story>
