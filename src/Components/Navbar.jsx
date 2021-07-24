@@ -33,10 +33,13 @@ export function Navbar({ handleUsd, usd, logged, handleLoggedIn }) {
   return (
     <div className="NavBar">
       <div className="NavBar-leftGrid">
-        <img
-          src="https://assets.milaap.org/assets/milaap-logo-tiny-4d3dbc4e55c2aaec351f0f376329c624236c4d6266b910f472684e70603f600d.png"
-          alt="logo.png"
-        />
+        <Link to = '/' onClick = {()=>setActive('')}>
+          <img
+            src="https://assets.milaap.org/assets/milaap-logo-tiny-4d3dbc4e55c2aaec351f0f376329c624236c4d6266b910f472684e70603f600d.png"
+            alt="logo.png"
+          />
+        </Link>
+
         <Link
           className={active === "home" ? "nav_options_active" : "nav_options"}
           to="/"
