@@ -11,9 +11,9 @@ function LoginForm({ handleLoggedIn }) {
     event.preventDefault();
   };
 
-  const handleHandler = (i) => {
-    handleLoggedIn(i);
-  };
+  // const handleHandler = (i) => {
+  //   handleLoggedIn(i);
+  // };
 
   let validation = false;
   const handleLogin = async () => {

@@ -18,7 +18,7 @@ import Lform from "./Components/Pages/Login";
 import Fform from "./Components/Pages/Fund";
 
 const Main = withRouter(
-  ({ location, handleUsd, usd, handleLoggedIn, logged }) => {
+  ({ location, handleUsd, usd, handleLoggedIn, logged , first, handleFirst}) => {
     return (
       <div className="Contents">
         {!["/Register", "/Login", "/Fund"].includes(location.pathname) ? (
@@ -30,7 +30,7 @@ const Main = withRouter(
           />
         ) : null}
         <Switch>
-          <Route path="/" exact component={() => <Home usd={usd} />} />
+          <Route path="/" exact component={() => <Home usd={usd} first={first} handleFirst={(i)=>{handleFirst(i)}}/>} />
           <Route path="/donate" exact component={Donations} />
           <Route path="/lend" exact component={Lend} />
           <Route path="/pricing" exact component={Pricing} />
@@ -55,10 +55,15 @@ const Main = withRouter(
 const App = () => {
   const [usd, SetUsd] = useState(true);
   const [logged, SetLogged] = useState(false);
+  const [first, SetFirst] = useState("")
 
   const handleUsd = () => {
     SetUsd(!usd);
   };
+
+  const handleFirst = (i)=>{
+      SetFirst(i)
+  }
 
   const handleLoggedIn = (i) => {
     if (i == null) {
@@ -76,6 +81,8 @@ const App = () => {
           usd={usd}
           handleLoggedIn={handleLoggedIn}
           logged={logged}
+          first={first}
+          handleFirst= {(i)=>handleFirst(i)}
         />
       </Router>
     </div>
