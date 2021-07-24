@@ -84,15 +84,15 @@
       "id": 13
     },
     {
-      "full_name": "",
-      "email": "",
-      "pass": "",
+      "full_name": "Ronak Rastogi",
+      "email": "ronak@gmail.com",
+      "pass": "789456",
       "id": 14
     },
     {
-      "full_name": "",
-      "email": "",
-      "pass": "",
+      "full_name": "abcd",
+      "email": "abcd@gmail.com",
+      "pass": "abcd",
       "id": 15
     }
   ],
@@ -140,10 +140,10 @@
       "id": 6
     },
     {
-      "created": "Aditya",
+      "created": "Pulkit",
       "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
-      "des": "Need Oxygen Cylinders",
-      "raised": 0,
+      "des": "Cyclone Relief Fund",
+      "raised": "500000",
       "id": 7
     },
     {
