@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import Circle from "react-circle";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loader from "react-loader-spinner";
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -104,6 +105,11 @@ const Raised = styled.div`
     font-size: 10px;
   }
 `;
+const LoaderaWrap = styled.div`
+display:flex;
+width:100%;
+justify-content:center;
+`
 
 const FundTab = ({
   image,
@@ -184,8 +190,11 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
   const [other, setOther] = useState(false);
   const [covidData, setCovidData] = useState([]);
   const [dependency, setDependensy] = useState(false);
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
+    console.log('from useeffect')
     if (first === "") {
       getData();
     } else {
@@ -194,12 +203,13 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
   }, []);
 
   const getData = async () => {
+
     let { data } = await axios.get(
       "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
     );
+    console.log('from get data')
 
     setCovidData(data);
-    console.log(data, "the data from fundsTab");
     handleFirst(data);
   };
 
@@ -262,6 +272,18 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
           <p>15 Others</p>
         </TAB>
       </TabWrapper>
+      {
+        <LoaderaWrap>
+          <Loader
+            type="ThreeDots"
+            color="rgb(156,51,83)"
+            width={100}
+            height={100}
+            timeout={500}
+            style={{ margin: "auto" }}
+          />
+        </LoaderaWrap>
+      }
       <DISPLAY>
         {covid
           ? covidData.map((e) => {

@@ -201,7 +201,8 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
       patchData(num + val);
 
       handleFirst("");
-      window.location.href = "/";
+      // handleIsClose()
+      // SetTest(update)
     }
   };
 
