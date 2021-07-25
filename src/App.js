@@ -59,7 +59,14 @@ const Main = withRouter(
           <Route
             path="/donate"
             exact
-            component={() => <Donations cardData={cardData} />}
+            component={() => (
+              <Donations
+                cardData={cardData}
+                handleFirst={(i) => {
+                  handleFirst(i);
+                }}
+              />
+            )}
           />
           <Route path="/lend" exact component={Lend} />
           <Route path="/pricing" exact component={Pricing} />
@@ -92,7 +99,7 @@ const Main = withRouter(
   }
 );
 const App = () => {
-  const [usd, SetUsd] = useState(true);
+  const [usd, SetUsd] = useState(false);
   const [logged, SetLogged] = useState(false);
   const [first, SetFirst] = useState("");
 
@@ -104,6 +111,7 @@ const App = () => {
     target: 4000000,
     title:
       "Bengaluru is BREATHLESS! Urgently need O2 Cylinders & Covid Relief!",
+      id:1
   });
 
   const handleUsd = () => {

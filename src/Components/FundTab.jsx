@@ -114,6 +114,7 @@ const FundTab = ({
   usd,
   handleCardData,
   target,
+  id,
 }) => {
   const usdValue = (Number(amount) / 74.32).toFixed(2);
   function commaReplacer(x) {
@@ -134,6 +135,7 @@ const FundTab = ({
     amount,
     author,
     target,
+    id,
   };
 
   // const handleCardClick = (payload) => {
@@ -142,40 +144,36 @@ const FundTab = ({
 
   return (
     <>
-      <Link to = '/donate'
-      style={{textDecoration: 'none'}}
-      >
-      <WRAPPER
-        onClick = {(i)=> handleCardData(payload)}
-      >
-        <img src={image} alt="" />
-        <p>{title}</p>
-        <AMOUNT>
-          <Raised>
-            {/* <img src={loading} alt="" /> */}
-            <Circle
-              progress={perc}
-              size={50}
-              lineWidth={50}
-              textStyle={{
-                fontSize: "100px",
-                fontWeight: "500",
-              }}
-              progressColor="limegreen"
-              bgColor="rgba(218, 218, 218, 0.568)"
-            />
-            <div>
-              <div>Raised</div>
-              <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
-            </div>
-            <div>
-              <div>Created By</div>
-              <div>{author}</div>
-            </div>
-          </Raised>
-        </AMOUNT>
+      <Link to="/donate" style={{ textDecoration: "none" }}>
+        <WRAPPER onClick={(i) => handleCardData(payload)}>
+          <img src={image} alt="" />
+          <p>{title}</p>
+          <AMOUNT>
+            <Raised>
+              {/* <img src={loading} alt="" /> */}
+              <Circle
+                progress={perc}
+                size={50}
+                lineWidth={50}
+                textStyle={{
+                  fontSize: "100px",
+                  fontWeight: "500",
+                }}
+                progressColor="limegreen"
+                bgColor="rgba(218, 218, 218, 0.568)"
+              />
+              <div>
+                <div>Raised</div>
+                <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
+              </div>
+              <div>
+                <div>Created By</div>
+                <div>{author}</div>
+              </div>
+            </Raised>
+          </AMOUNT>
         </WRAPPER>
-        </Link>
+      </Link>
     </>
   );
 };
@@ -270,7 +268,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
           ? covidData.map((e) => {
               return (
                 <FundTab
-                  key={e.id}
+                  id={e.id}
                   image={e.url}
                   title={e.des}
                   amount={e.raised}

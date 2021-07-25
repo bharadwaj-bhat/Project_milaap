@@ -6,6 +6,7 @@ import Circle from "react-circle";
 import Modal from "react-modal";
 import { useState } from "react";
 import styles from "../Style.module.css";
+import axios from 'axios'
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -163,17 +164,49 @@ const QRCODE = styled.div`
   button:hover {
     cursor: pointer;
   }
-`;
+`;  
 
-const PayDonation = ({ cardData }) => {
+const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
   const [isOpen, setIsopen] = useState(false);
+
+  const [values, SetValues] = useState("");
+  const [upi, SetUpi] = useState("");
+
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
-  let perc = Math.floor((cardData.amount / cardData.target) * 100);
 
-  let amount = commaReplacer(cardData.amount);
+  let perc = Math.floor((update / cardData.target) * 100);
+  let amount = commaReplacer(update);
   let target = commaReplacer(cardData.target);
+
+  const handleChangeVal = (e) => {
+    SetValues(e.target.value);
+  };
+
+  const handleChangeUpi = (e) => {
+    SetUpi(e.target.value);
+  };
+
+  const handleDonate = () => {
+    if (upi === "masaischool") {
+      let num = Number(cardData.amount);
+      let val = Number(values);
+      patchData(num + val);
+      handleUpdate(val);
+      handleFirst("");
+     
+    }
+    else {
+      alert('wrong credentials')
+    }
+  };
+
+  const patchData = (x) => {
+    axios
+      .patch(`http://localhost:3001/funds/${cardData.id}`, { raised: x })
+      .then((res) => console.log(res));
+  };
 
   return (
     <>
@@ -254,6 +287,7 @@ const PayDonation = ({ cardData }) => {
             name="pay"
             id="pay"
             placeholder="Please Enter the Donation Amount"
+            onChange={(e) => handleChangeVal(e)}
           />
           <label htmlFor="pay">Donation Amount</label>
         </div>
@@ -263,10 +297,13 @@ const PayDonation = ({ cardData }) => {
             name="upi"
             id="upi"
             placeholder="Please Enter the UPI ID"
+            onChange={(e) => handleChangeUpi(e)}
           />
           <label htmlFor="upi">UPI ID</label>
         </div>
-        <button className={styles.modal_button}>Donate</button>
+        <button className={styles.modal_button} onClick={handleDonate}>
+          Donate
+        </button>
         <button
           className={styles.modal_button}
           onClick={() => {
