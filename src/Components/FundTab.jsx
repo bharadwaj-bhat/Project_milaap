@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import loading from "./images/loading.png";
 import data from "../FundDB.json";
 import virus from "./images/virus.png";
 import virus1 from "./images/virus1.png";
@@ -12,7 +11,7 @@ import more1 from "./images/more1.png";
 import { useState, useEffect } from "react";
 import Circle from "react-circle";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -275,7 +274,9 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   author={e.created}
                   usd={usd}
                   target={e.target}
-                  handleCardData = {(i)=>{handleCardData(i)}}
+                  handleCardData={(i) => {
+                    handleCardData(i);
+                  }}
                 />
               );
             })
@@ -288,6 +289,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.amount}
                   author={e.author}
                   usd={usd}
+                  target={e.target}
                   handleCardData={(i) => handleCardData(i)}
                 />
               );
@@ -301,6 +303,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.amount}
                   author={e.author}
                   usd={usd}
+                  target={e.target}
                 />
               );
             })
@@ -312,6 +315,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.amount}
                   author={e.author}
                   usd={usd}
+                  target={e.target}
                 />
               );
             })}
