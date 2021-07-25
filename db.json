@@ -108,7 +108,7 @@
       "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
       "des": "Bengaluru is BREATHLESS! Urgently need O2 Cylinders & Covid Relief!",
       "target": "4000000",
-      "raised": "2500783",
+      "raised": 2500883,
       "id": 1
     },
     {
@@ -156,11 +156,7 @@
       "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
       "des": "Covid 19 ",
       "target": "500000",
-<<<<<<< HEAD
-      "raised": 232110,
-=======
-      "raised": 208859,
->>>>>>> 27aec319947d9c1f8501bf44d64dfdacb80cb684
+      "raised": 123159,
       "id": 7
     }
   ]

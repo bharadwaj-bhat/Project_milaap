@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import donation from "./images/donation.png";
 import qr from "./images/qr.png";
-import upi from "./images/upi.png";
+// import upi from "./images/upi.png";
 import Circle from "react-circle";
 import Modal from "react-modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "../Style.module.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -168,21 +167,12 @@ const QRCODE = styled.div`
   }
 `;
 
-const PayDonation = ({
-  cardData,
-  handleFirst,
-  update,
-  handleUpdate,
-  isOpen,
-  handleIsOpen,
-  handleIsClose,
-}) => {
+const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
   const [values, SetValues] = useState("");
   const [upi, SetUpi] = useState("");
+  const [isOpen, setIsopen] = useState(false);
 
- 
-
-  console.log('mounted')
+  console.log("mounted");
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -199,6 +189,10 @@ const PayDonation = ({
     SetUpi(e.target.value);
   };
 
+  const handleIsOpen = () => {
+    setIsopen(true);
+  };
+
   const handleDonate = () => {
     if (upi === "masaischool") {
       let num = Number(cardData.amount);
@@ -208,13 +202,6 @@ const PayDonation = ({
       patchData(num + val);
 
       handleFirst("");
-<<<<<<< HEAD
-    } else {
-      alert("wrong credentials");
-=======
-      // handleIsClose()
-      // SetTest(update)
->>>>>>> 27aec319947d9c1f8501bf44d64dfdacb80cb684
     }
   };
 
@@ -256,13 +243,7 @@ const PayDonation = ({
           </div>
         </div>
 
-        <BUTTON
-          onClick={() => {
-            handleIsOpen();
-          }}
-        >
-          Donate Now
-        </BUTTON>
+        <BUTTON onClick={handleIsOpen}>Donate Now</BUTTON>
         <IconLine>
           <div></div>
           <p>
@@ -279,7 +260,9 @@ const PayDonation = ({
       </WRAPPER>
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => {}}
+        onRequestClose={() => {
+          setIsopen(false);
+        }}
         style={{
           overlay: {
             backgroundColor: "rgba(0,0,0,0.5)",
@@ -315,24 +298,15 @@ const PayDonation = ({
           />
           <label htmlFor="upi">UPI ID</label>
         </div>
-<<<<<<< HEAD
-        <Link to="/">
-          <button className={styles.modal_button} onClick={handleDonate}>
-            Donate
-          </button>
-        </Link>
+        <button className={styles.modal_button} onClick={handleDonate}>
+          Donate
+        </button>
         <button
           className={styles.modal_button}
           onClick={() => {
             setIsopen(false);
           }}
         >
-=======
-        <button className={styles.modal_button} onClick={handleDonate}>
-          Donate
-        </button>
-        <button className={styles.modal_button} onClick={() => {}}>
->>>>>>> 27aec319947d9c1f8501bf44d64dfdacb80cb684
           Close
         </button>
       </Modal>
