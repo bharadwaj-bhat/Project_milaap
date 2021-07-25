@@ -6,7 +6,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import styles from "../Style.module.css";
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -299,11 +299,11 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
           />
           <label htmlFor="upi">UPI ID</label>
         </div>
-        {/* <Link to="/">
-        </Link> */}
-        <button className={styles.modal_button} onClick={handleDonate}>
-          Donate
-        </button>
+        <Link to="/">
+          <button className={styles.modal_button} onClick={handleDonate}>
+            Donate
+          </button>
+        </Link>
         <button
           className={styles.modal_button}
           onClick={() => {
