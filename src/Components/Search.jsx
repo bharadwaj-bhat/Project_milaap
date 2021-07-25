@@ -7,12 +7,12 @@ import rhombus2 from "./images/rhombus2.png";
 
 const NofeeWrapper = styled.div`
   width: 70%;
-  height: 80px;
-  margin-top: -60px;
-  z-index:2;
+  height: 70px;
+  margin-top: -70px;
+  z-index: 2;
   margin-left: 150px;
   padding-right: 20px;
-  box-shadow: 1px 1px gray;
+  box-shadow: 1px 2px 4px -4px #9c3353;
   display: flex;
   justify-content: space-between;
   vertical-align: middle;

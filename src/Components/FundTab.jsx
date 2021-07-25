@@ -113,6 +113,7 @@ const FundTab = ({
   usd,
   handleCardData,
   target,
+  id,
 }) => {
   const usdValue = (Number(amount) / 74.32).toFixed(2);
   function commaReplacer(x) {
@@ -133,6 +134,7 @@ const FundTab = ({
     amount,
     author,
     target,
+    id,
   };
 
   // const handleCardClick = (payload) => {
@@ -265,7 +267,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
           ? covidData.map((e) => {
               return (
                 <FundTab
-                  key={e.id}
+                  id={e.id}
                   image={e.url}
                   title={e.des}
                   amount={e.raised}

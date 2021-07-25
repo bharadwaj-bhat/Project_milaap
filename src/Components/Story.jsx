@@ -189,15 +189,15 @@ const Creator = styled.div`
     color: rgb(156, 51, 83);
   }
 `;
-const Story = ({cardData}) => {
+const Story = ({cardData, update}) => {
 
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
-  let perc = Math.floor((cardData.amount / cardData.target) * 100);
+  let perc = Math.floor((update / cardData.target) * 100);
 
 
-  let amount = commaReplacer(cardData.amount);
+  let amount = commaReplacer(update);
   let target = commaReplacer(cardData.target)
   
   return (
