@@ -7,12 +7,6 @@
       "pass": "9868551551"
     },
     {
-      "full_name": "Pulkit Tyagi",
-      "email": "pulkit@gmail.com",
-      "pass": "123456",
-      "id": 2
-    },
-    {
       "full_name": "Priyanshu Tyagi",
       "email": "priyanshu@gmail.com",
       "pass": "123456789",
@@ -100,6 +94,12 @@
       "email": "abc@ymail.com",
       "pass": "12345",
       "id": 16
+    },
+    {
+      "full_name": "Pulkit Tyagi",
+      "email": "pulkit@gmail.com",
+      "pass": "123456",
+      "id": 17
     }
   ],
   "funds": [
@@ -154,10 +154,18 @@
     {
       "created": "Pulkit Tyagi",
       "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
-      "des": "Covid 19 ",
+      "des": "covid 19",
       "target": "500000",
-      "raised": 123159,
+      "raised": 17500,
       "id": 7
+    },
+    {
+      "created": "Pulkit Tyagi",
+      "url": "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+      "des": "Covid 19 Fund",
+      "target": "500000",
+      "raised": 25000,
+      "id": 8
     }
   ]
 }

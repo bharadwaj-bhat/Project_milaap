@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import donation from "./images/donation.png";
 import qr from "./images/qr.png";
-// import upi from "./images/upi.png";
 import Circle from "react-circle";
 import Modal from "react-modal";
 import { useState } from "react";
@@ -202,6 +201,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
       patchData(num + val);
 
       handleFirst("");
+      window.location.href = "/";
     }
   };
 
@@ -298,6 +298,8 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
           />
           <label htmlFor="upi">UPI ID</label>
         </div>
+        {/* <Link to="/">
+        </Link> */}
         <button className={styles.modal_button} onClick={handleDonate}>
           Donate
         </button>
