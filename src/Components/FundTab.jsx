@@ -11,7 +11,7 @@ import more1 from "./images/more1.png";
 import { useState, useEffect } from "react";
 import Circle from "react-circle";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const TabWrapper = styled.div`
   width: 48%;
@@ -141,40 +141,36 @@ const FundTab = ({
 
   return (
     <>
-      <Link to = '/donate'
-      style={{textDecoration: 'none'}}
-      >
-      <WRAPPER
-        onClick = {(i)=> handleCardData(payload)}
-      >
-        <img src={image} alt="" />
-        <p>{title}</p>
-        <AMOUNT>
-          <Raised>
-            {/* <img src={loading} alt="" /> */}
-            <Circle
-              progress={perc}
-              size={50}
-              lineWidth={50}
-              textStyle={{
-                fontSize: "100px",
-                fontWeight: "500",
-              }}
-              progressColor="limegreen"
-              bgColor="rgba(218, 218, 218, 0.568)"
-            />
-            <div>
-              <div>Raised</div>
-              <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
-            </div>
-            <div>
-              <div>Created By</div>
-              <div>{author}</div>
-            </div>
-          </Raised>
-        </AMOUNT>
+      <Link to="/donate" style={{ textDecoration: "none" }}>
+        <WRAPPER onClick={(i) => handleCardData(payload)}>
+          <img src={image} alt="" />
+          <p>{title}</p>
+          <AMOUNT>
+            <Raised>
+              {/* <img src={loading} alt="" /> */}
+              <Circle
+                progress={perc}
+                size={50}
+                lineWidth={50}
+                textStyle={{
+                  fontSize: "100px",
+                  fontWeight: "500",
+                }}
+                progressColor="limegreen"
+                bgColor="rgba(218, 218, 218, 0.568)"
+              />
+              <div>
+                <div>Raised</div>
+                <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
+              </div>
+              <div>
+                <div>Created By</div>
+                <div>{author}</div>
+              </div>
+            </Raised>
+          </AMOUNT>
         </WRAPPER>
-        </Link>
+      </Link>
     </>
   );
 };
@@ -276,7 +272,9 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   author={e.created}
                   usd={usd}
                   target={e.target}
-                  handleCardData = {(i)=>{handleCardData(i)}}
+                  handleCardData={(i) => {
+                    handleCardData(i);
+                  }}
                 />
               );
             })
@@ -289,6 +287,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.amount}
                   author={e.author}
                   usd={usd}
+                  target={e.target}
                   handleCardData={(i) => handleCardData(i)}
                 />
               );
@@ -302,6 +301,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.amount}
                   author={e.author}
                   usd={usd}
+                  target={e.target}
                 />
               );
             })
@@ -313,6 +313,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                   amount={e.amount}
                   author={e.author}
                   usd={usd}
+                  target={e.target}
                 />
               );
             })}
