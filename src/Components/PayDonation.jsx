@@ -207,7 +207,7 @@ const PayDonation = ({
       patchData(num + val);
 
       handleFirst("");
-      // handleIsClose()
+      handleIsClose()
       // SetTest(update)
     }
   };
