@@ -67,7 +67,7 @@ export const Register = styled.div`
   }
   & > div:nth-child(2) > div {
     width: 100%;
-    margin-top: 7%;
+    margin-top: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
