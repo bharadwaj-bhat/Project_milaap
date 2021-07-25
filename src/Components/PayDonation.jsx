@@ -6,7 +6,7 @@ import Circle from "react-circle";
 import Modal from "react-modal";
 import { useState } from "react";
 import styles from "../Style.module.css";
-import axios from 'axios'
+import axios from "axios";
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -164,7 +164,7 @@ const QRCODE = styled.div`
   button:hover {
     cursor: pointer;
   }
-`;  
+`;
 
 const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
   const [isOpen, setIsopen] = useState(false);
@@ -195,10 +195,8 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
       patchData(num + val);
       handleUpdate(val);
       handleFirst("");
-     
-    }
-    else {
-      alert('wrong credentials')
+    } else {
+      alert("wrong credentials");
     }
   };
 
