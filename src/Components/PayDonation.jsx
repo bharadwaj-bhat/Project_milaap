@@ -4,10 +4,11 @@ import qr from "./images/qr.png";
 import upi from "./images/upi.png";
 import Circle from "react-circle";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../Style.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -167,12 +168,21 @@ const QRCODE = styled.div`
   }
 `;
 
-const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
-  const [isOpen, setIsopen] = useState(false);
-
+const PayDonation = ({
+  cardData,
+  handleFirst,
+  update,
+  handleUpdate,
+  isOpen,
+  handleIsOpen,
+  handleIsClose,
+}) => {
   const [values, SetValues] = useState("");
   const [upi, SetUpi] = useState("");
 
+ 
+
+  console.log('mounted')
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -193,11 +203,18 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
     if (upi === "masaischool") {
       let num = Number(cardData.amount);
       let val = Number(values);
-      patchData(num + val);
       handleUpdate(val);
+
+      patchData(num + val);
+
       handleFirst("");
+<<<<<<< HEAD
     } else {
       alert("wrong credentials");
+=======
+      // handleIsClose()
+      // SetTest(update)
+>>>>>>> 27aec319947d9c1f8501bf44d64dfdacb80cb684
     }
   };
 
@@ -241,7 +258,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
 
         <BUTTON
           onClick={() => {
-            setIsopen(true);
+            handleIsOpen();
           }}
         >
           Donate Now
@@ -262,9 +279,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
       </WRAPPER>
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => {
-          setIsopen(false);
-        }}
+        onRequestClose={() => {}}
         style={{
           overlay: {
             backgroundColor: "rgba(0,0,0,0.5)",
@@ -300,6 +315,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
           />
           <label htmlFor="upi">UPI ID</label>
         </div>
+<<<<<<< HEAD
         <Link to="/">
           <button className={styles.modal_button} onClick={handleDonate}>
             Donate
@@ -311,6 +327,12 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
             setIsopen(false);
           }}
         >
+=======
+        <button className={styles.modal_button} onClick={handleDonate}>
+          Donate
+        </button>
+        <button className={styles.modal_button} onClick={() => {}}>
+>>>>>>> 27aec319947d9c1f8501bf44d64dfdacb80cb684
           Close
         </button>
       </Modal>
