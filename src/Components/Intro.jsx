@@ -80,6 +80,7 @@ const CountWrapper = styled.div`
 const ImageWrapper = styled.div`
   width: 40%;
   height:60%;
+  z-index:-1;
 
   img {
     margin-top:80px;

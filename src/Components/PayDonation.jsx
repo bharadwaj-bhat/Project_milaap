@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import donation from "./images/donation.png";
-import loading from "./images/loading.png";
 import qr from "./images/qr.png";
 import upi from "./images/upi.png";
-import Circle from "react-circle"
+import Circle from "react-circle";
+import Modal from "react-modal";
+import { useState } from "react";
+import styles from "../Style.module.css";
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -164,8 +166,7 @@ const QRCODE = styled.div`
 `;
 
 const PayDonation = ({ cardData }) => {
-  
-  
+  const [isOpen, setIsopen] = useState(false);
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -198,7 +199,7 @@ const PayDonation = ({ cardData }) => {
             bgColor="rgba(218, 218, 218, 0.568)"
           />
 
-          <div style ={{marginLeft:'60px'}}>
+          <div style={{ marginLeft: "60px" }}>
             <p className="raised"> Raised </p>
             <p className="amt1">
               ₹{amount} <span>of ₹{target}</span>
@@ -206,8 +207,13 @@ const PayDonation = ({ cardData }) => {
           </div>
         </div>
 
-        <BUTTON>Donate Now</BUTTON>
-
+        <BUTTON
+          onClick={() => {
+            setIsopen(true);
+          }}
+        >
+          Donate Now
+        </BUTTON>
         <IconLine>
           <div></div>
           <p>
@@ -222,6 +228,54 @@ const PayDonation = ({ cardData }) => {
 
         <img src={upi} alt="" />
       </WRAPPER>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => {
+          setIsopen(false);
+        }}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0,0,0,0.5)",
+          },
+          content: {
+            borderRadius: "25px",
+            top: "120px",
+            bottom: "100px",
+            right: "400px",
+            left: "400px",
+            border: "10px solid #642848",
+          },
+        }}
+      >
+        <h2 className={styles.modal_heading}>Donate to a Cause</h2>
+        <div className={styles.field}>
+          <input
+            type="text"
+            name="pay"
+            id="pay"
+            placeholder="Please Enter the Donation Amount"
+          />
+          <label htmlFor="pay">Donation Amount</label>
+        </div>
+        <div className={styles.field}>
+          <input
+            type="text"
+            name="upi"
+            id="upi"
+            placeholder="Please Enter the UPI ID"
+          />
+          <label htmlFor="upi">UPI ID</label>
+        </div>
+        <button className={styles.modal_button}>Donate</button>
+        <button
+          className={styles.modal_button}
+          onClick={() => {
+            setIsopen(false);
+          }}
+        >
+          Close
+        </button>
+      </Modal>
     </>
   );
 };
