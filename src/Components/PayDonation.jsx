@@ -4,9 +4,10 @@ import qr from "./images/qr.png";
 import upi from "./images/upi.png";
 import Circle from "react-circle";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../Style.module.css";
 import axios from 'axios'
+
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -166,12 +167,21 @@ const QRCODE = styled.div`
   }
 `;  
 
-const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
-  const [isOpen, setIsopen] = useState(false);
-
+const PayDonation = ({
+  cardData,
+  handleFirst,
+  update,
+  handleUpdate,
+  isOpen,
+  handleIsOpen,
+  handleIsClose,
+}) => {
   const [values, SetValues] = useState("");
   const [upi, SetUpi] = useState("");
 
+ 
+
+  console.log('mounted')
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -192,13 +202,13 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
     if (upi === "masaischool") {
       let num = Number(cardData.amount);
       let val = Number(values);
-      patchData(num + val);
       handleUpdate(val);
+
+      patchData(num + val);
+
       handleFirst("");
-     
-    }
-    else {
-      alert('wrong credentials')
+      // handleIsClose()
+      // SetTest(update)
     }
   };
 
@@ -242,7 +252,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
 
         <BUTTON
           onClick={() => {
-            setIsopen(true);
+            handleIsOpen();
           }}
         >
           Donate Now
@@ -263,9 +273,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
       </WRAPPER>
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => {
-          setIsopen(false);
-        }}
+        onRequestClose={() => {}}
         style={{
           overlay: {
             backgroundColor: "rgba(0,0,0,0.5)",
@@ -304,12 +312,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
         <button className={styles.modal_button} onClick={handleDonate}>
           Donate
         </button>
-        <button
-          className={styles.modal_button}
-          onClick={() => {
-            setIsopen(false);
-          }}
-        >
+        <button className={styles.modal_button} onClick={() => {}}>
           Close
         </button>
       </Modal>
