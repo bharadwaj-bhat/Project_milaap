@@ -111,7 +111,7 @@ const App = () => {
     target: 4000000,
     title:
       "Bengaluru is BREATHLESS! Urgently need O2 Cylinders & Covid Relief!",
-      id:1
+    id: 1,
   });
 
   const handleUsd = () => {
