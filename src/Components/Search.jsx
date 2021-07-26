@@ -20,24 +20,31 @@ const NofeeWrapper = styled.div`
   border-radius: 5px;
   border-left: 7px solid #9c3353;
 
-  div:nth-child(1) {
-    width: 60%;
-    margin-top: 10px;
-    display: flex;
-    padding-left: 150px;
-  }
+  div {
+    display:grid;
+    grid-template-columns:1fr 1fr 5fr;
+    justify-content:center;
+    align-items:center;
+    .theP{
+      font-size:1.2rem;
+      color:black;
+      font-weight:600;
+      letter-spacing:1px;
+      margin-top:2px;
+      margin-left:25px;
 
-  div > div {
-    margin-top: 10px;
-    padding-left: 10px;
-    font-size: 22px;
+    }
+    .img{
+        margin-top:15px;
+        margin-left:120px;
+      }
   }
 
   p {
     font-size: 50px;
     font-weight: bold;
     color: #9c3353;
-    margin: 10px 0 10px 0;
+    margin: 5px 0 10px 0;
   }
 `;
 
@@ -115,8 +122,13 @@ const Search = () => {
     <>
       <NofeeWrapper>
         <div>
-          <img src={horn} alt="" />
-          <div>Our crowdfunding platform charges NO fees</div>
+          <div></div>
+          <div className = 'img'>
+            {" "}
+            <img src={horn} alt="" />
+          </div>
+
+          <p className="theP">Our crowdfunding platform charges NO fees</p>
         </div>
         <p>0%</p>
       </NofeeWrapper>

@@ -68,13 +68,15 @@ const WRAPPER = styled.div`
   p {
     height: 60px;
     padding: 10px;
+    color: #575656;
+    font-weight: 600;
   }
 `;
 
 const AMOUNT = styled.div``;
 
 const DISPLAY = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -104,12 +106,23 @@ const Raised = styled.div`
     color: gray;
     font-size: 10px;
   }
+
+  .author,
+  .raised {
+    color: #000000;
+    font-weight: 600;
+  }
+
+  .author {
+    font-size: 80%;
+    font-weight: 550;
+  }
 `;
 const LoaderaWrap = styled.div`
-display:flex;
-width:100%;
-justify-content:center;
-`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;
 
 const FundTab = ({
   image,
@@ -169,11 +182,13 @@ const FundTab = ({
               />
               <div>
                 <div>Raised</div>
-                <div>{usd ? `$${usdVal}` : `₹ ${inrVal}`}</div>
+                <div className="raised">
+                  {usd ? `$${usdVal}` : `₹ ${inrVal}`}
+                </div>
               </div>
               <div>
                 <div>Created By</div>
-                <div>{author}</div>
+                <div className="author">{author}</div>
               </div>
             </Raised>
           </AMOUNT>
@@ -190,11 +205,10 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
   const [other, setOther] = useState(false);
   const [covidData, setCovidData] = useState([]);
   const [dependency, setDependensy] = useState(false);
-  const [loading, setLoading] = useState(true)
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log('from useeffect')
+    console.log("from useeffect");
     if (first === "") {
       getData();
     } else {
@@ -203,11 +217,10 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
   }, []);
 
   const getData = async () => {
-
     let { data } = await axios.get(
       "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
     );
-    console.log('from get data')
+    console.log("from get data");
 
     setCovidData(data);
     handleFirst(data);
