@@ -32,8 +32,8 @@ const IntroWrapper = styled.div`
   }
 
   p {
-    font-size: 19px;
-    margin-top: 20px;
+    font-size: 21px;
+    margin-top: 10px;
   }
 
   button {
@@ -43,7 +43,9 @@ const IntroWrapper = styled.div`
     border: none;
     color: white;
     background-color: #9c3353;
-    font-size: 18px;
+    font-size: 17px;
+    letter-spacing:1px;
+    font-weight:600;
   }
 
   button:hover {
@@ -57,6 +59,9 @@ const CountWrapper = styled.div`
   justify-content: space-between;
 
   div {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
     height: 70px;
     padding-right: 15px;
     border-right: 1px solid #e0b9c5;
@@ -68,12 +73,20 @@ const CountWrapper = styled.div`
 
   div > p:nth-child(1) {
     margin-top: -1px;
-    color: #9c3353;
+    color: rgb(158, 48, 71);
+    font-weight: 600;
   }
 
   div > p:nth-child(2) {
     margin-top: -15px;
-    color: gray;
+    color: black;
+    font: 13px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .donationCount {
+    border-right:none;
   }
 `;
 
@@ -95,9 +108,18 @@ const HeadBar = styled.div`
   top: 15%;
   left: 25%;
 
+  p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(93, 93, 93);
+    letter-spacing: 1px;
+  }
+
   button {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 50px;
     font-size: 22px;
     border: none;
@@ -116,9 +138,9 @@ const HeadBar = styled.div`
     margin-top: 10px;
   }
 
-  img {
-    margin-top: 8px;
-    margin-left: 8px;
+  i {
+    color: rgb(150, 48, 80);
+    margin-left: 25px;
   }
 `;
 const Intro = () => {
@@ -126,8 +148,8 @@ const Intro = () => {
     <>
       <HeadBar>
         <button>
-          <div>9-Month-Old Khyati Need Your Help To Live An SMA Free Life</div>
-          <img src={next} alt="" />
+          <p>9-Month-Old Khyati Need Your Help To Live An SMA Free Life</p>
+          <i class="fas fa-arrow-circle-right"></i>
         </button>
       </HeadBar>
       <Wrapper>
@@ -142,14 +164,14 @@ const Intro = () => {
           </Link>
           <CountWrapper>
             <div>
-              <p>40,000+</p>
+              <p>470,000+</p>
               <p>Fundraisers</p>
             </div>
             <div>
               <p>Rs. 1400 Crores +</p>
-              <p>Raised</p>
+              <p className = 'theP'>Raised</p>
             </div>
-            <div>
+            <div className = 'donationCount'>
               <p>60 lakhs +</p>
               <p>Donations</p>
             </div>
