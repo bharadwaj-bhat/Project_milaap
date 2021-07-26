@@ -19,7 +19,7 @@ export const Load = () => {
 
   setTimeout(() => {
     setLoading(false);
-  }, 3000);
+  }, 2000);
 
   return (
     <BarLoader loading={loading} color="#9C3353" size={150} css={override} />
