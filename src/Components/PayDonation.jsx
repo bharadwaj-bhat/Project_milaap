@@ -3,7 +3,7 @@ import donation from "./images/donation.png";
 import qr from "./images/qr.png";
 import Circle from "react-circle";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../Style.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -170,11 +170,20 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
   const [values, SetValues] = useState("");
   const [upi, SetUpi] = useState("");
   const [isOpen, setIsopen] = useState(false);
+  const [raisedUp, setRaisedUp] = useState('');
 
-  console.log("mounted");
+  useEffect(() => {
+    return () => {
+      console.log('unmounted paydonations')
+      // handleDonate()
+    };
+  }, []);
+
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
+
+  // let update1 = raisedUp === "" ? update : raisedUp;
 
   let perc = Math.floor((update / cardData.target) * 100);
   let amount = commaReplacer(update);
@@ -192,24 +201,33 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
     setIsopen(true);
   };
 
+  const handleUpdataHandler = (val) => {
+    handleUpdate(val);
+  };
+
   const handleDonate = () => {
     if (upi === "masaischool") {
       let num = Number(cardData.amount);
       let val = Number(values);
-      handleUpdate(val);
 
-      patchData(num + val);
+      console.log('inside handledonate')
+      handleUpdataHandler(val);
 
-      handleFirst("");
-      // handleIsClose()
-      // SetTest(update)
+       patchData(num + val);
+
+      setIsopen(false)
+      // setTimeout(() => {
+      //    handleFirst("");
+      //  },4000) 
+
+
     }
   };
 
   const patchData = (x) => {
     axios
       .patch(`http://localhost:3001/funds/${cardData.id}`, { raised: x })
-      .then((res) => console.log(res));
+      .then((res) => console.log('patched',res));
   };
 
   return (
@@ -299,11 +317,11 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
           />
           <label htmlFor="upi">UPI ID</label>
         </div>
-        <Link to="/">
-          <button className={styles.modal_button} onClick={handleDonate}>
-            Donate
-          </button>
-        </Link>
+        {/* <Link to="/"> */}
+        <button className={styles.modal_button} onClick={handleDonate}>
+          Donate
+        </button>
+        {/* </Link> */}
         <button
           className={styles.modal_button}
           onClick={() => {

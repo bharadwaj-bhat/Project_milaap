@@ -14,23 +14,15 @@ const WRAPPER = styled.div`
 const Donation = ({cardData, handleFirst}) => {
 
   const [update, SetUpdate] = useState(cardData.amount)
-  const [isOpen, setIsopen] = useState(false);
-
+  
+ 
   const handleUpdate = (i) => {
     SetUpdate((prev) => {
       return Number(prev) + Number(i);
     })
   }
 
-  const handleIsOpen = ()=>{
-    setIsopen(true)
-  }
-
-  const handleIsClose = ()=>{
-    setIsopen(false)
-  }
-
-  console.log('from donations')
+  
   return (
     <WRAPPER>
       <Story cardData={cardData} update={update} />
@@ -39,9 +31,6 @@ const Donation = ({cardData, handleFirst}) => {
         update={update}
         handleUpdate={(i) => handleUpdate(i)}
         handleFirst={(i) => handleFirst(i)}
-        isOpen={isOpen}
-        handleIsOpen={handleIsOpen}
-        handleIsClose={handleIsClose}
       />
     </WRAPPER>
   );
