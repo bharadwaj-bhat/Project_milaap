@@ -1,4 +1,4 @@
-##  Project Milaap
+﻿##  Project Milaap
 This is a working clone of online crowdfunding website MILAAP, this project has been done in order to learn what goes into building a website by implementing React JS. Working on this project was really fun and we learned a lot of new things that goes into building a website using the most popular JavaScript library. This is a collaborative project under the guidance of MASAI Team to facilitate the full stack web development curriculam. 
 
 ##  Contributors
@@ -12,11 +12,27 @@ This is a working clone of online crowdfunding website MILAAP, this project has 
     https://github.com/onlyaditya
     
 ##  Pages Build
-1. Landing Page
-2. Donate Page
-3. Registration page
-4. Login page
-5. Start a fundraiser page
+Landing Page
+
+![landingpage](https://user-images.githubusercontent.com/83001524/129575962-3a15bfe4-4f33-484a-b842-82e97fc44599.png)
+
+Donate Page
+
+![donate](https://user-images.githubusercontent.com/83001524/129576619-f1f3268b-72bc-4b2f-9e44-7d5ca7034dc0.png)
+
+Registration page
+
+![registration](https://user-images.githubusercontent.com/83001524/129576671-5ec2f8be-97ca-4b0d-8111-aa317744df4a.png)
+
+Login page
+
+![login](https://user-images.githubusercontent.com/83001524/129576725-07dd8d79-9927-43fb-a7f9-e8065f6f7a00.png)
+
+Start a fundraiser page
+
+![fundraiser](https://user-images.githubusercontent.com/83001524/129576778-1df0a579-feb0-45af-8117-d55d11e23015.png)
+
+
 
 ##  Functionalities Added
 1. Toggeling between the INR to USD conversion and vice versa with the toggle button on the Navbar. 
