@@ -12,11 +12,14 @@ This is a working clone of online crowdfunding website MILAAP, this project has 
     https://github.com/onlyaditya
     
 ##  Pages Build
-1. Landing Page
-2. Donate Page
-3. Registration page
-4. Login page
-5. Start a fundraiser page
+Landing Page
+
+![landingpage](https://user-images.githubusercontent.com/83001524/129575962-3a15bfe4-4f33-484a-b842-82e97fc44599.png)
+
+Donate Page
+Registration page
+Login page
+Start a fundraiser page
 
 ##  Functionalities Added
 1. Toggeling between the INR to USD conversion and vice versa with the toggle button on the Navbar. 
