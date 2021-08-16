@@ -302,6 +302,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
           ? covidData.map((e) => {
               return (
                 <FundTab
+                  key={e.id}
                   id={e.id}
                   image={e.url}
                   title={e.des}
