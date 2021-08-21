@@ -5,6 +5,9 @@ import { Bottom } from "../Bottom";
 import { Load } from "../../Load";
 
 export function Home({ usd, first, handleFirst, handleCardData }) {
+  
+
+
   return (
     <>
       <Load />

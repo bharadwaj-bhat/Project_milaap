@@ -103,7 +103,7 @@ const Bottom = () => {
   return (
     <>
       <Wrapper>
-        <a>See More Fundraisers</a>
+        <p>See More Fundraisers</p>
 
         <p>A friend in your hour of need</p>
         <IconLine>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import next from "./images/next.png";
 import styles from "../Style.module.css";
 import { Link } from "react-router-dom";
 
@@ -149,7 +148,7 @@ const Intro = () => {
       <HeadBar>
         <button>
           <p>9-Month-Old Khyati Need Your Help To Live An SMA Free Life</p>
-          <i class="fas fa-arrow-circle-right"></i>
+          <i className="fas fa-arrow-circle-right"></i>
         </button>
       </HeadBar>
       <Wrapper>

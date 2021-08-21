@@ -12,11 +12,11 @@ export function Row2(){
         </div>
         <div className = {styles.RowD2}>
           <p>Find us on </p>
-          <i class="fab fa-facebook-square"></i>
-          <i class="fab fa-twitter-square"></i>
-          <i class="fab fa-linkedin"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-youtube"></i>
+          <i className="fab fa-facebook-square"></i>
+          <i className="fab fa-twitter-square"></i>
+          <i className="fab fa-linkedin"></i>
+          <i className="fab fa-instagram"></i>
+          <i className="fab fa-youtube"></i>
         </div>
       </div>
     );

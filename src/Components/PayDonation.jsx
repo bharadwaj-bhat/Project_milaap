@@ -3,10 +3,10 @@ import donation from "./images/donation.png";
 import qr from "./images/qr.png";
 import Circle from "react-circle";
 import Modal from "react-modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "../Style.module.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 
 const WRAPPER = styled.div`
   width: 40%;
@@ -170,14 +170,9 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
   const [values, SetValues] = useState("");
   const [upi, SetUpi] = useState("");
   const [isOpen, setIsopen] = useState(false);
-  const [raisedUp, setRaisedUp] = useState('');
+ 
 
-  useEffect(() => {
-    return () => {
-      console.log('unmounted paydonations')
-      // handleDonate()
-    };
-  }, []);
+  
 
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -278,6 +273,7 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
         <img src={upi} alt="" />
       </WRAPPER>
       <Modal
+        ariaHideApp={false}
         isOpen={isOpen}
         onRequestClose={() => {
           setIsopen(false);

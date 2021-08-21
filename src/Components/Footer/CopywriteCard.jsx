@@ -1,4 +1,4 @@
-import { func } from 'prop-types'
+
 import styles from './Footer.module.css'
 
 

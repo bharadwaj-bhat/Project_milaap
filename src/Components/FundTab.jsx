@@ -204,23 +204,19 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
   const [memories, setMemories] = useState(false);
   const [other, setOther] = useState(false);
   const [covidData, setCovidData] = useState([]);
-  const [dependency, setDependensy] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("from useeffect");
     if (first === "") {
       getData();
     } else {
       setCovidData(first);
     }
-  }, []);
+  }, [first]);
 
   const getData = async () => {
     let { data } = await axios.get(
       "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
     );
-    console.log("from get data");
 
     setCovidData(data);
     handleFirst(data);
@@ -299,10 +295,10 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
       }
       <DISPLAY>
         {covid
-          ? covidData.map((e) => {
+          ? covidData.map((e, index) => {
               return (
                 <FundTab
-                  key={e.id}
+                  key={index}
                   id={e.id}
                   image={e.url}
                   title={e.des}
@@ -317,9 +313,10 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
               );
             })
           : medical
-          ? data.medical.map((e) => {
+          ? data.medical.map((e, index) => {
               return (
                 <FundTab
+                  key={index}
                   image={e.image}
                   title={e.title}
                   amount={e.amount}
@@ -331,9 +328,10 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
               );
             })
           : memories
-          ? data.memorial.map((e) => {
+          ? data.memorial.map((e, index) => {
               return (
                 <FundTab
+                  key={index}
                   image={e.image}
                   title={e.title}
                   amount={e.amount}
@@ -343,9 +341,10 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
                 />
               );
             })
-          : data.covid.map((e) => {
+          : data.covid.map((e, index) => {
               return (
                 <FundTab
+                  key={index}
                   image={e.image}
                   title={e.title}
                   amount={e.amount}

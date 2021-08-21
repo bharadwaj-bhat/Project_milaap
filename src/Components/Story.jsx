@@ -1,10 +1,8 @@
 import { StoryText } from "./StoryText";
 import styled from "styled-components";
-import loading from "./images/loading.png";
 import whatsapp from "./images/whatsapp.png";
 import facebook from "./images/facebook.png";
 import Circle from "react-circle";
-
 
 const WRAPPER = styled.div`
   width: 55%;
@@ -34,13 +32,13 @@ const WRAPPER = styled.div`
     width: 100%;
     padding: 7px 0 7px 0;
     background: rgb(243, 243, 243);
-    height:30px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    p{
-      font-size:0.9rem;
+    p {
+      font-size: 0.9rem;
     }
   }
 
@@ -148,7 +146,7 @@ const Creator = styled.div`
     display: grid;
     grid-template-columns: 1fr 3fr;
     justify-content: ;
-    align-items:center;
+    align-items: center;
     width: 48%;
     height: 80px;
     border: 1px solid rgba(184, 179, 179, 0.719);
@@ -189,17 +187,15 @@ const Creator = styled.div`
     color: rgb(156, 51, 83);
   }
 `;
-const Story = ({cardData, update}) => {
-
+const Story = ({ cardData, update }) => {
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
   }
   let perc = Math.floor((update / cardData.target) * 100);
 
-
   let amount = commaReplacer(update);
-  let target = commaReplacer(cardData.target)
-  
+  let target = commaReplacer(cardData.target);
+
   return (
     <>
       <WRAPPER>
