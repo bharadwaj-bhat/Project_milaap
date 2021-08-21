@@ -1,5 +1,5 @@
 import styles from "../Style.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,6 +8,21 @@ function RegisterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+
+  const [dataList, setDataList] = useState();
+
+  useEffect(() => {
+
+   dataLisatFunc()
+      
+  }, []);
+
+  const dataLisatFunc =  () => {
+      axios
+        .get("http://localhost:3001/user")
+      .then((res) => setDataList(res.data))
+      
+    }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,7 +34,21 @@ function RegisterForm() {
     });
   };
 
+  const alreadySignedIn = () =>{
+    toast.dark("User already registered !", {
+      position:"top-center",
+    })
+  }
+
   const handleSignUp = async () => {
+
+    for (let i = 0; i < dataList.length - 1; i++){
+      if (dataList[i].email === email) {
+        alreadySignedIn();
+        return;
+      }
+    }
+
     await axios.post("http://localhost:3001/user", {
       full_name: name,
       email: email,
@@ -44,7 +73,7 @@ function RegisterForm() {
     <>
       <form onSubmit={handleSubmit}>
         <div className={styles.field}>
-          <input
+          <input 
             value={name}
             type="text"
             name="fullname"
