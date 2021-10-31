@@ -136,7 +136,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Router>
+      <Router basename="/Project_milaap">
         <Main
           handleUsd={handleUsd}
           usd={usd}
