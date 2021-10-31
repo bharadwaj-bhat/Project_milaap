@@ -12,17 +12,14 @@ function RegisterForm() {
   const [dataList, setDataList] = useState();
 
   useEffect(() => {
-
-   dataLisatFunc()
-      
+    dataLisatFunc();
   }, []);
 
-  const dataLisatFunc =  () => {
-      axios
-        .get("http://localhost:3001/user")
-      .then((res) => setDataList(res.data))
-      
-    }
+  const dataLisatFunc = () => {
+    axios
+      .get("https://bharadwaj-bhat-json-database.herokuapp.com/user")
+      .then((res) => setDataList(res.data));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,26 +31,28 @@ function RegisterForm() {
     });
   };
 
-  const alreadySignedIn = () =>{
+  const alreadySignedIn = () => {
     toast.dark("User already registered !", {
-      position:"top-center",
-    })
-  }
+      position: "top-center",
+    });
+  };
 
   const handleSignUp = async () => {
-
-    for (let i = 0; i < dataList.length - 1; i++){
+    for (let i = 0; i < dataList.length - 1; i++) {
       if (dataList[i].email === email) {
         alreadySignedIn();
         return;
       }
     }
 
-    await axios.post("http://localhost:3001/user", {
-      full_name: name,
-      email: email,
-      pass: pass,
-    });
+    await axios.post(
+      "https://bharadwaj-bhat-json-database.herokuapp.com/user",
+      {
+        full_name: name,
+        email: email,
+        pass: pass,
+      }
+    );
     setName("");
     setEmail("");
     setPass("");
@@ -73,7 +72,7 @@ function RegisterForm() {
     <>
       <form onSubmit={handleSubmit}>
         <div className={styles.field}>
-          <input 
+          <input
             value={name}
             type="text"
             name="fullname"

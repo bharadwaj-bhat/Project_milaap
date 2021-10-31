@@ -20,13 +20,16 @@ function FundForm({ handleFirst }) {
   };
 
   const handleFund = async () => {
-    await axios.post("http://localhost:3001/funds", {
-      created: created,
-      url: "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
-      des: des,
-      target: amt,
-      raised: 0,
-    });
+    await axios.post(
+      "https://bharadwaj-bhat-json-database.herokuapp.com/funds",
+      {
+        created: created,
+        url: "https://images.milaap.org/milaap/image/upload/v1619611080/production/images/campaign/282210/Milaap-banner_cixopj_1619611084.jpg?crop=faces&format=jpg&height=452&mode=crop&width=603",
+        des: des,
+        target: amt,
+        raised: 0,
+      }
+    );
     notify();
   };
 

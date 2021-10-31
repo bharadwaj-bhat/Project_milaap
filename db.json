@@ -106,6 +106,18 @@
       "email": "sbhat23@gmail.com",
       "pass": "12345",
       "id": 18
+    },
+    {
+      "full_name": "Bharadwaj",
+      "email": "test@mail.com",
+      "pass": "111111",
+      "id": 19
+    },
+    {
+      "full_name": "Bharadwaj",
+      "email": "test@gmail.com",
+      "pass": "111111",
+      "id": 20
     }
   ],
   "funds": [

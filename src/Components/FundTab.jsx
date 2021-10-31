@@ -215,7 +215,7 @@ const FundDisplay = ({ usd, first, handleFirst, handleCardData }) => {
 
   const getData = async () => {
     let { data } = await axios.get(
-      "http://localhost:3001/funds?_page=1&_limit=6&_sort=id&_order=desc"
+      "https://bharadwaj-bhat-json-database.herokuapp.com/funds?_page=1&_limit=6&_sort=id&_order=desc"
     );
 
     setCovidData(data);

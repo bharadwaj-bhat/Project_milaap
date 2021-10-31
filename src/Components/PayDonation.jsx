@@ -7,7 +7,6 @@ import { useState } from "react";
 import styles from "../Style.module.css";
 import axios from "axios";
 
-
 const WRAPPER = styled.div`
   width: 40%;
   height: 685px;
@@ -170,9 +169,6 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
   const [values, SetValues] = useState("");
   const [upi, SetUpi] = useState("");
   const [isOpen, setIsopen] = useState(false);
- 
-
-  
 
   function commaReplacer(x) {
     return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -205,24 +201,25 @@ const PayDonation = ({ cardData, handleFirst, update, handleUpdate }) => {
       let num = Number(cardData.amount);
       let val = Number(values);
 
-      console.log('inside handledonate')
+      console.log("inside handledonate");
       handleUpdataHandler(val);
 
-       patchData(num + val);
+      patchData(num + val);
 
-      setIsopen(false)
+      setIsopen(false);
       // setTimeout(() => {
       //    handleFirst("");
-      //  },4000) 
-
-
+      //  },4000)
     }
   };
 
   const patchData = (x) => {
     axios
-      .patch(`http://localhost:3001/funds/${cardData.id}`, { raised: x })
-      .then((res) => console.log('patched',res));
+      .patch(
+        `https://bharadwaj-bhat-json-database.herokuapp.com/funds/${cardData.id}`,
+        { raised: x }
+      )
+      .then((res) => console.log("patched", res));
   };
 
   return (
