@@ -2,7 +2,7 @@
   "name": "milaap",
   "version": "0.1.0",
   "private": true,
-  "homepage":"http://bharadwaj-bhat.github.io/Project_milaap/",
+  "homepage":"http://bharadwaj-bhat.github.io/milaap",
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@testing-library/jest-dom": "^5.14.1",
