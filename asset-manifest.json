@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/Project_milaap/static/css/main.c0dfd5fc.chunk.css",
-    "main.js": "/Project_milaap/static/js/main.a1525e62.chunk.js",
-    "main.js.map": "/Project_milaap/static/js/main.a1525e62.chunk.js.map",
+    "main.js": "/Project_milaap/static/js/main.1ffbd00c.chunk.js",
+    "main.js.map": "/Project_milaap/static/js/main.1ffbd00c.chunk.js.map",
     "runtime-main.js": "/Project_milaap/static/js/runtime-main.1d2fdfe3.js",
     "runtime-main.js.map": "/Project_milaap/static/js/runtime-main.1d2fdfe3.js.map",
     "static/css/2.68b64559.chunk.css": "/Project_milaap/static/css/2.68b64559.chunk.css",
-    "static/js/2.e5210fa0.chunk.js": "/Project_milaap/static/js/2.e5210fa0.chunk.js",
-    "static/js/2.e5210fa0.chunk.js.map": "/Project_milaap/static/js/2.e5210fa0.chunk.js.map",
+    "static/js/2.cc468e27.chunk.js": "/Project_milaap/static/js/2.cc468e27.chunk.js",
+    "static/js/2.cc468e27.chunk.js.map": "/Project_milaap/static/js/2.cc468e27.chunk.js.map",
     "index.html": "/Project_milaap/index.html",
     "static/css/2.68b64559.chunk.css.map": "/Project_milaap/static/css/2.68b64559.chunk.css.map",
     "static/css/main.c0dfd5fc.chunk.css.map": "/Project_milaap/static/css/main.c0dfd5fc.chunk.css.map",
-    "static/js/2.e5210fa0.chunk.js.LICENSE.txt": "/Project_milaap/static/js/2.e5210fa0.chunk.js.LICENSE.txt"
+    "static/js/2.cc468e27.chunk.js.LICENSE.txt": "/Project_milaap/static/js/2.cc468e27.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1d2fdfe3.js",
     "static/css/2.68b64559.chunk.css",
-    "static/js/2.e5210fa0.chunk.js",
+    "static/js/2.cc468e27.chunk.js",
     "static/css/main.c0dfd5fc.chunk.css",
-    "static/js/main.a1525e62.chunk.js"
+    "static/js/main.1ffbd00c.chunk.js"
   ]
 }
